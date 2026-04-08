@@ -1,0 +1,247 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<section class="hdx-dashboard">
+
+    <!-- TOPBAR -->
+    <div class="hdx-topbar">
+        <button class="hdx-back" onclick="window.location.href='login.html'">← Back</button>
+        <h2>Dashboard</h2>
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <!-- STATS -->
+    <div class="hdx-cards">
+        <div class="hdx-card">Revenue <span>$12,500</span></div>
+        <div class="hdx-card">Orders <span>320</span></div>
+        <div class="hdx-card">Users <span>1,250</span></div>
+        <div class="hdx-card">Growth <span>+18%</span></div>
+        <div class="hdx-card">Visits <span>8,420</span></div>
+        <div class="hdx-card">Conversions <span>3.2%</span></div>
+    </div>
+
+    <!-- GRAPHS -->
+    <div class="hdx-graphs">
+        <div class="hdx-graph-box">
+            <h3>Revenue Trend</h3>
+            <canvas id="lineChart"></canvas>
+        </div>
+
+        <div class="hdx-graph-box">
+            <h3>Weekly Orders</h3>
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div class="hdx-graph-box">
+            <h3>Traffic Sources</h3>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+        <div class="hdx-graph-box">
+            <h3>Monthly Growth</h3>
+            <canvas id="lineChart2"></canvas>
+        </div>
+    </div>
+
+</section>
+
+<style>
+
+/* GLOBAL FIX */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: #0f3a35;
+    color: #fff;
+}
+
+/* FULL WIDTH FIX */
+.hdx-dashboard {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* TOPBAR */
+.hdx-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+}
+
+.hdx-back {
+    background: #e0b46a;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hdx-topbar input {
+    padding: 8px;
+    border: 1px solid #555;
+    background: transparent;
+    color: #fff;
+}
+
+/* CARDS */
+.hdx-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 15px;
+}
+
+.hdx-card {
+    background: #123d37;
+    padding: 15px;
+    border: 1px solid #e0b46a;
+    border-radius: 10px;
+
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.hdx-card span {
+    display: block;
+    margin-top: 8px;
+    font-size: 18px;
+    color: #e0b46a;
+}
+
+/* GRAPHS */
+.hdx-graphs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.hdx-graph-box {
+    background: #123d37;
+    padding: 15px;
+    border: 1px solid #e0b46a;
+    border-radius: 10px;
+
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* ANIMATION */
+.hdx-show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: 0.6s ease;
+}
+
+/* 🔥 MOBILE PERFECT */
+@media(max-width:768px){
+
+    /* FULL WIDTH */
+    body {
+        background: #0f3a35;
+    }
+
+    .hdx-dashboard {
+        width: 100%;
+    }
+
+    /* TOPBAR STACK */
+    .hdx-topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hdx-back {
+        width: 100%;
+    }
+
+    .hdx-topbar input {
+        width: 100%;
+    }
+
+    /* CARDS 1 BY 1 */
+    .hdx-cards {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    /* GRAPHS 1 BY 1 */
+    .hdx-graphs {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    /* FIX CHART SIZE */
+    canvas {
+        width: 100% !important;
+        height: 230px !important;
+    }
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// charts (same)
+new Chart(document.getElementById("lineChart"), {
+    type: "line",
+    data: {
+        labels: ["Jan","Feb","Mar","Apr","May","Jun"],
+        datasets: [{
+            data: [2000,4000,3000,6000,8000,12000],
+            borderColor: "#e0b46a",
+            fill: false
+        }]
+    }
+});
+
+new Chart(document.getElementById("barChart"), {
+    type: "bar",
+    data: {
+        labels: ["Mon","Tue","Wed","Thu","Fri","Sat"],
+        datasets: [{
+            data: [12,19,8,15,10,20],
+            backgroundColor: "#e0b46a"
+        }]
+    }
+});
+
+new Chart(document.getElementById("pieChart"), {
+    type: "doughnut",
+    data: {
+        labels: ["Direct","Social","Ads"],
+        datasets: [{
+            data: [40,35,25],
+            backgroundColor: ["#e0b46a","#fff","#888"]
+        }]
+    }
+});
+
+new Chart(document.getElementById("lineChart2"), {
+    type: "line",
+    data: {
+        labels: ["Week1","Week2","Week3","Week4"],
+        datasets: [{
+            data: [5,10,7,15],
+            borderColor: "#e0b46a",
+            fill: false
+        }]
+    }
+});
+
+/* ONE BY ONE */
+const items = document.querySelectorAll(".hdx-card, .hdx-graph-box");
+
+window.onload = () => {
+    items.forEach((el, i) => {
+        setTimeout(() => {
+            el.classList.add("hdx-show");
+        }, i * 120);
+    });
+};
+</script>

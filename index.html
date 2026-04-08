@@ -1,0 +1,130 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<section class="hdx-loader">
+
+    <!-- BACKGROUND GLOW -->
+    <div class="hdx-bg-glow"></div>
+
+    <!-- CONTENT -->
+    <div class="hdx-loader-box">
+
+        <!-- LOGO / NAME -->
+        <h1 class="hdx-logo">STACKLY</h1>
+
+        <!-- LINE -->
+        <div class="hdx-line"></div>
+
+        <!-- TEXT -->
+        <p class="hdx-text">Crafting Experience...</p>
+
+    </div>
+
+</section>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI';
+    background:#0f3a35;
+    overflow:hidden;
+    color:#fff;
+}
+
+/* FULL SCREEN */
+.hdx-loader{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+/* GLOW BACKGROUND */
+.hdx-bg-glow{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:radial-gradient(circle,#e0b46a33,transparent);
+    animation:glowMove 6s ease-in-out infinite;
+}
+
+/* CENTER BOX */
+.hdx-loader-box{
+    text-align:center;
+    z-index:2;
+}
+
+/* LOGO */
+.hdx-logo{
+    font-size:50px;
+    letter-spacing:8px;
+    color:#e0b46a;
+    opacity:0;
+    animation:fadeIn 1.5s forwards;
+}
+
+/* LINE */
+.hdx-line{
+    width:0;
+    height:2px;
+    background:#e0b46a;
+    margin:20px auto;
+    animation:lineGrow 2s forwards;
+}
+
+/* TEXT */
+.hdx-text{
+    opacity:0;
+    animation:fadeIn 2s forwards;
+    animation-delay:1s;
+    color:#ccc;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+    to{opacity:1;}
+}
+
+@keyframes lineGrow{
+    to{width:120px;}
+}
+
+@keyframes glowMove{
+    0%{transform:translate(-50px,-50px);}
+    50%{transform:translate(50px,50px);}
+    100%{transform:translate(-50px,-50px);}
+}
+
+/* FADE OUT */
+.hdx-loader.fade-out{
+    animation:fadeOut 1s forwards;
+}
+
+@keyframes fadeOut{
+    to{opacity:0; transform:scale(1.1);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .hdx-logo{
+        font-size:32px;
+        letter-spacing:4px;
+    }
+}
+</style>
+
+<script>
+// cinematic exit
+setTimeout(()=>{
+    document.querySelector(".hdx-loader").classList.add("fade-out");
+},2500);
+
+// redirect to homepage
+setTimeout(()=>{
+    window.location.href = "home.html"; // 🔥 your homepage
+},3500);
+</script>

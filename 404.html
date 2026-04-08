@@ -1,0 +1,159 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<section class="hdx-404">
+
+    <!-- GLOW -->
+    <div class="hdx-glow"></div>
+
+    <div class="hdx-content">
+
+        <!-- GLITCH -->
+        <h1 class="glitch" data-text="404">404</h1>
+
+        <h2>Oops! Page Not Found</h2>
+        <p class="hdx-desc">The page you are looking for doesn’t exist.</p>
+
+        <button onclick="goBack()">Go Back</button>
+
+    </div>
+
+</section>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI';
+    background:#0f3a35;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* LAYOUT */
+.hdx-404{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+/* GLOW */
+.hdx-glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#e0b46a33,transparent);
+    animation:moveGlow 6s infinite ease-in-out;
+}
+
+/* CONTENT */
+.hdx-content{
+    z-index:2;
+}
+
+/* GLITCH TEXT */
+.glitch{
+    font-size:120px;
+    color:#e0b46a;
+    position:relative;
+    animation:glitch 1s infinite;
+}
+
+/* GLITCH LAYERS */
+.glitch::before,
+.glitch::after{
+    content:attr(data-text);
+    position:absolute;
+    left:0;
+    width:100%;
+    overflow:hidden;
+}
+
+.glitch::before{
+    left:2px;
+    text-shadow:-2px 0 red;
+    animation:glitchTop 1s infinite;
+}
+
+.glitch::after{
+    left:-2px;
+    text-shadow:-2px 0 blue;
+    animation:glitchBottom 1s infinite;
+}
+
+/* TEXT */
+h2{
+    margin-top:10px;
+}
+
+.hdx-desc{
+    color:#ccc;
+}
+
+/* BUTTON */
+button{
+    margin-top:20px;
+    padding:12px 30px;
+    border:none;
+    background:#e0b46a;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#d4a85c;
+}
+
+/* ANIMATIONS */
+@keyframes glitch{
+    0%{transform:skew(0);}
+    20%{transform:skew(5deg);}
+    40%{transform:skew(-5deg);}
+    60%{transform:skew(3deg);}
+    80%{transform:skew(-3deg);}
+    100%{transform:skew(0);}
+}
+
+@keyframes glitchTop{
+    0%{clip-path:inset(0 0 80% 0);}
+    50%{clip-path:inset(0 0 50% 0);}
+    100%{clip-path:inset(0 0 80% 0);}
+}
+
+@keyframes glitchBottom{
+    0%{clip-path:inset(80% 0 0 0);}
+    50%{clip-path:inset(50% 0 0 0);}
+    100%{clip-path:inset(80% 0 0 0);}
+}
+
+@keyframes moveGlow{
+    0%{transform:translate(-60px,-60px);}
+    50%{transform:translate(60px,60px);}
+    100%{transform:translate(-60px,-60px);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .glitch{
+        font-size:70px;
+    }
+}
+</style>
+
+<script>
+function goBack(){
+    if(window.history.length > 1){
+        window.history.back(); // ✅ goes to previous page
+    } else {
+        // no redirect, just message
+        document.querySelector(".hdx-desc").innerText = "No previous page available";
+    }
+}
+</script>

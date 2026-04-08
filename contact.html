@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Header</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #eef1e6;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: 0.3s;
+}
+
+/* SCROLL */
+.header.scrolled {
+  background: darkslategray;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* LOGO */
+.logo img {
+  height: 60px;
+  filter: brightness(0) saturate(100%) invert(74%) sepia(41%) saturate(620%) hue-rotate(6deg) brightness(95%) contrast(90%);
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 35px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #D4AF37 ;
+}
+
+/* RIGHT */
+.right {
+    color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ICON */
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.icon:hover {
+  color: #D4AF37;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #D4AF37;
+  color: #0d2b1f;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+}
+
+/* ================= MOBILE ================= */
+.mobile-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+
+  .header {
+    padding: 15px 20px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: darkslategray;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 25px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .desktop-btn {
+    display: none;
+  }
+
+  .mobile-btn {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .icon span {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="logo.webp" alt="logo">
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="navMenu">
+    <a href="home.html">𝖧𝖮𝖬𝖤 +</a>
+    <a href="about.html">𝙰𝙱𝙾𝚄𝚃 +</a>
+    <a href="service.html">𝚂𝙴𝚁𝚅𝙸𝙲𝙴 +</a>
+    <a href="page.html">𝙿𝙰𝙶𝙴𝚂 +</a>
+    <a href="blog.html">𝙱𝙻𝙾𝙶 +</a>
+
+    <!-- MOBILE BUTTON -->
+    <a href="contact.html" class="btn mobile-btn">BOOK TABLE ↗</a>
+  </nav>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <a href="#" class="icon"><i class="fa fa-search"></i><span>Search</span></a>
+
+    <a href="login.html" class="icon">
+      <i class="fa fa-user"></i>
+      <span>Login</span>
+    </a>
+
+    <!-- DESKTOP BUTTON -->
+    <a href="contact.html" class="btn desktop-btn">BOOK TABLE ↗</a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+</header>
+
+<script>
+
+// MENU
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("navMenu");
+
+hamburger.onclick = () => {
+  nav.classList.toggle("active");
+};
+
+// SCROLL
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+</script>
+<section class="contactHeroUltraX">
+
+    <!-- BACKGROUND -->
+    <div class="contactBgUltraX"></div>
+
+    <!-- CONTENT -->
+    <div class="contactContentUltraX">
+        <h1>Contact Us</h1>
+
+        <p>
+            A taste of perfection in every dish –
+            <span>fine dining with</span>
+            <b>a modern twist.</b>
+        </p>
+    </div>
+
+</section>
+<style>
+  .contactHeroUltraX{
+    position:relative;
+    height:75vh; /* 3/4 height */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* BACKGROUND IMAGE */
+.contactBgUltraX{
+    position:absolute;
+    inset:0;
+
+    background:url("abt.webp") center/cover no-repeat;
+
+    animation:zoomBgUltraX 12s ease-in-out infinite alternate;
+}
+
+/* DARK OVERLAY */
+.contactBgUltraX::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+}
+
+/* ZOOM ANIMATION */
+@keyframes zoomBgUltraX{
+    from{ transform:scale(1); }
+    to{ transform:scale(1.08); }
+}
+
+/* CONTENT */
+.contactContentUltraX{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:700px;
+    padding:0 20px;
+}
+
+/* TITLE */
+.contactContentUltraX h1{
+    font-size:72px;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+/* TEXT */
+.contactContentUltraX p{
+    font-size:18px;
+    color:#ddd;
+    line-height:1.6;
+}
+
+/* GOLD TEXT */
+.contactContentUltraX span{
+    color:#fff;
+}
+
+.contactContentUltraX b{
+    color:#d6a85c;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .contactHeroUltraX{
+        height:60vh;
+    }
+
+    .contactContentUltraX h1{
+        font-size:36px;
+    }
+
+    .contactContentUltraX p{
+        font-size:15px;
+    }
+}
+</style>
+<section class="contactSplitUltra">
+
+    <!-- LEFT -->
+    <div class="contactLeftUltra">
+
+        <div class="contactImageWrapUltra">
+            <img src="abt2.png" alt="">
+        </div>
+
+        <div class="contactInfoUltra">
+            <h4>✦ VISIT US ✦</h4>
+
+            <p class="address">
+                Restoria, Arrondissement, Paris 9578
+            </p>
+
+            <p class="time">
+                LUNCH TIME - <span>10.00 am – 3:30 pm</span><br>
+                DINNER TIME - <span>08.00 pm – 10:30 pm</span>
+            </p>
+
+            <p class="contact">
+                Booking : +85-123-456789<br>
+                Email : booking@gmail.com
+            </p>
+        </div>
+
+    </div>
+
+    <!-- CENTER LINE -->
+    <div class="contactDividerUltra"></div>
+
+    <!-- RIGHT -->
+    <div class="contactRightUltra">
+
+        <h5>✦ WRITE TO US ✦</h5>
+        <h2>Message us</h2>
+
+        <p class="subtext">
+            Contact us – we aim to reply within 24 hours and are happy to help!
+        </p>
+
+        <!-- FORM -->
+        <form class="contactFormUltra" onsubmit="return handleSubmit(event)">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <input type="tel" placeholder="Phone Number"
+                   required pattern="[6-9]{1}[0-9]{9}">
+
+            <textarea placeholder="Special Request" required></textarea>
+
+            <button type="submit">Send Your Message</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+.contactSplitUltra{
+    display:grid;
+    grid-template-columns: 1fr 1px 1.2fr;
+    gap:60px;
+    padding:100px 8%;
+    background:#0b2e2a;
+    color:#fff;
+}
+
+/* LEFT */
+.contactLeftUltra{
+    text-align:center;
+}
+
+/* BIG IMAGE */
+.contactImageWrapUltra{
+    width:300px;
+    height:380px;
+    margin:auto;
+    border-radius:50% 50% 0 0;
+    overflow:hidden;
+    border:2px solid #d6a85c;
+}
+
+.contactImageWrapUltra img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.contactImageWrapUltra:hover img{
+    transform:scale(1.08);
+}
+
+/* INFO */
+.contactInfoUltra{
+    margin-top:30px;
+}
+
+.contactInfoUltra h4{
+    color:#d6a85c;
+    margin-bottom:15px;
+    letter-spacing:2px;
+}
+
+.contactInfoUltra .address{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.contactInfoUltra .time{
+    color:#bbb;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.contactInfoUltra span{
+    color:#fff;
+}
+
+.contactInfoUltra .contact{
+    font-size:15px;
+    color:#ccc;
+}
+
+/* DIVIDER */
+.contactDividerUltra{
+    width:1px;
+    background:linear-gradient(to bottom, transparent, #d6a85c, transparent);
+}
+
+/* RIGHT */
+.contactRightUltra{
+    max-width:600px;
+}
+
+.contactRightUltra h5{
+    color:#d6a85c;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.contactRightUltra h2{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.subtext{
+    color:#bbb;
+    margin-bottom:30px;
+}
+
+/* FORM */
+.contactFormUltra{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contactFormUltra input,
+.contactFormUltra textarea{
+    padding:18px;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.2);
+    color:#fff;
+    font-size:15px;
+    outline:none;
+    transition:0.3s;
+}
+
+.contactFormUltra textarea{
+    height:140px;
+    resize:none;
+}
+
+/* FOCUS */
+.contactFormUltra input:focus,
+.contactFormUltra textarea:focus{
+    border-color:#d6a85c;
+    box-shadow:0 0 10px rgba(214,168,92,0.3);
+}
+
+/* BUTTON */
+.contactFormUltra button{
+    padding:18px;
+    background:#d6a85c;
+    border:none;
+    color:#000;
+    font-weight:600;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contactFormUltra button:hover{
+    background:#c89a4f;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .contactSplitUltra{
+        grid-template-columns:1fr;
+        gap:50px;
+        text-align:center;
+    }
+
+    .contactDividerUltra{
+        display:none;
+    }
+
+    .contactRightUltra h2{
+        font-size:36px;
+    }
+
+    .contactImageWrapUltra{
+        width:240px;
+        height:300px;
+    }
+}
+
+</style>
+
+
+<script>
+function handleSubmit(e){
+    e.preventDefault();
+
+    const form = e.target;
+
+    if(!form.checkValidity()){
+        form.reportValidity();
+        return false;
+    }
+
+    // redirect after valid submit
+    window.location.href = "404.html";
+}
+</script>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-col">
+      <h1>Subscribe Newsletter</h1>
+
+      <div class="subscribe-box">
+        <input type="email" placeholder="Enter Your Email">
+        <button onclick="window.location.href='404.html'">Subscribe ↗</button>
+      </div>
+
+      <div class="social">
+        <p>Follow Us:</p>
+        <div class="icons">
+          <a href="404.html"><i class="fab fa-facebook-f"></i></a>
+          <a href="404.html"><i class="fab fa-x-twitter"></i></a>
+          <a href="404.html"><i class="fab fa-instagram"></i></a>
+          <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="home.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="service.html">service</a></li>
+        <li><a href="page.html">page</a></li>
+        <li><a href="blog.html">blog</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="404.html">Mobile Banking</a></li>
+        <li><a href="404.html">Advanced Security</a></li>
+        <li><a href="404.html">Digital Wallet</a></li>
+        <li><a href="404.html">Budgeting Tools</a></li>
+        <li><a href="404.html">Making Transactions</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h3>Get In Touch</h3>
+
+      <p><strong>📍 Location:</strong><br>18 Tanglewood Lane Gulfport</p>
+      <p><strong>✉ Email:</strong><br>hello@finto.com</p>
+      <p><strong>📞 Phone:</strong><br>+001 (808) 5550148</p>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+
+    <p>© <span>Stackly</span> Is Proudly Owned By <span>HiBootstrap</span></p>
+
+    <img src="logo.webp" alt="logo">
+
+    <div class="footer-links">
+      <a href="404.html">Privacy Policy</a>
+      <span>•</span>
+      <a href="404.html">Terms & Conditions</a>
+    </div>
+
+  </div>
+
+</footer>
+
+<style>
+
+/* FOOTER */
+.footer {
+  background: #0f3d2e;
+  color: #fff;
+  padding: 80px 90px 30px;
+}
+
+/* TOP */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* COLUMN */
+.footer-col {
+  flex: 1;
+}
+
+/* TITLE */
+.footer-col h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.footer-col h3 {
+  margin-bottom: 20px;
+}
+
+/* SUBSCRIBE */
+.subscribe-box {
+  display: flex;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.subscribe-box input {
+  flex: 1;
+  border: none;
+  padding: 15px;
+  outline: none;
+}
+
+.subscribe-box button {
+  background: #8bd400;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* SOCIAL */
+.social {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icons a {
+  text-decoration: none;
+}
+
+.icons i {
+  background: #fff;
+  color: #0f3d2e;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* LINKS */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #8bd400;
+}
+
+/* LIST */
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+/* CONTACT */
+.footer-col p {
+  margin-bottom: 15px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 20px;
+}
+
+.footer-bottom span {
+  color: #8bd400;
+}
+
+.footer-bottom img {
+  height: 40px;
+}
+
+.footer-links a {
+  margin: 0 5px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 900px) {
+
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-col h1 {
+    font-size: 26px;
+  }
+
+  .subscribe-box {
+    flex-direction: column;
+  }
+
+  .subscribe-box input,
+  .subscribe-box button {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+}
+
+</style>

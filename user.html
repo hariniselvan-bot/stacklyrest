@@ -1,0 +1,233 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<section class="hdx-dashboard">
+
+    <!-- TOPBAR -->
+    <div class="hdx-topbar">
+        <button class="hdx-back" onclick="window.location.href='login.html'">← Back</button>
+        <h2>Analytics</h2>
+        <input type="text" placeholder="Search reports...">
+    </div>
+
+    <!-- STATS -->
+    <div class="hdx-cards">
+        <div class="hdx-card">Sales <span>$18,900</span></div>
+        <div class="hdx-card">Customers <span>2,140</span></div>
+        <div class="hdx-card">Bounce Rate <span>32%</span></div>
+        <div class="hdx-card">Sessions <span>12,300</span></div>
+        <div class="hdx-card">CTR <span>4.8%</span></div>
+        <div class="hdx-card">Profit <span>$6,700</span></div>
+    </div>
+
+    <!-- GRAPHS -->
+    <div class="hdx-graphs">
+
+        <div class="hdx-graph-box">
+            <h3>Sales Overview</h3>
+            <canvas id="areaChart"></canvas>
+        </div>
+
+        <div class="hdx-graph-box">
+            <h3>Device Usage</h3>
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div class="hdx-graph-box">
+            <h3>User Distribution</h3>
+            <canvas id="polarChart"></canvas>
+        </div>
+
+        <div class="hdx-graph-box">
+            <h3>Performance</h3>
+            <canvas id="mixedChart"></canvas>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+*{box-sizing:border-box;}
+
+body{
+    margin:0;
+    font-family:'Segoe UI';
+    background:#0f3a35;
+    color:#fff;
+}
+
+.hdx-dashboard{
+    width:100%;
+    overflow-x:hidden;
+}
+
+/* TOPBAR */
+.hdx-topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    gap:10px;
+}
+
+.hdx-back{
+    background:#e0b46a;
+    border:none;
+    padding:10px;
+}
+
+.hdx-topbar input{
+    padding:8px;
+    border:1px solid #555;
+    background:transparent;
+    color:#fff;
+}
+
+/* CARDS */
+.hdx-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    padding:15px;
+}
+
+.hdx-card{
+    background:#123d37;
+    padding:15px;
+    border:1px solid #e0b46a;
+    border-radius:10px;
+
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.hdx-card span{
+    display:block;
+    margin-top:8px;
+    color:#e0b46a;
+}
+
+/* GRAPHS */
+.hdx-graphs{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    padding:15px;
+}
+
+.hdx-graph-box{
+    background:#123d37;
+    padding:15px;
+    border:1px solid #e0b46a;
+    border-radius:10px;
+
+    opacity:0;
+    transform:translateY(40px);
+}
+
+/* ANIMATION */
+.hdx-show{
+    opacity:1!important;
+    transform:translateY(0)!important;
+    transition:0.6s;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .hdx-topbar{
+        flex-direction:column;
+    }
+
+    .hdx-back,
+    .hdx-topbar input{
+        width:100%;
+    }
+
+    .hdx-cards{
+        grid-template-columns:1fr;
+    }
+
+    .hdx-graphs{
+        grid-template-columns:1fr;
+    }
+
+    canvas{
+        height:230px!important;
+    }
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// AREA CHART
+new Chart(areaChart,{
+    type:'line',
+    data:{
+        labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+        datasets:[{
+            data:[1200,1900,1500,2200,3000,2800,3500],
+            borderColor:"#e0b46a",
+            backgroundColor:"rgba(224,180,106,0.2)",
+            fill:true,
+            tension:0.4
+        }]
+    }
+});
+
+// HORIZONTAL BAR
+new Chart(barChart,{
+    type:'bar',
+    data:{
+        labels:["Mobile","Desktop","Tablet"],
+        datasets:[{
+            data:[60,30,10],
+            backgroundColor:"#e0b46a"
+        }]
+    },
+    options:{indexAxis:'y'}
+});
+
+// POLAR AREA
+new Chart(polarChart,{
+    type:'polarArea',
+    data:{
+        labels:["USA","India","UK","Canada"],
+        datasets:[{
+            data:[30,25,20,25],
+            backgroundColor:["#e0b46a","#fff","#888","#2f6f66"]
+        }]
+    }
+});
+
+// MIXED CHART
+new Chart(mixedChart,{
+    data:{
+        labels:["Jan","Feb","Mar","Apr"],
+        datasets:[
+            {
+                type:'bar',
+                data:[3,5,2,6],
+                backgroundColor:"#e0b46a"
+            },
+            {
+                type:'line',
+                data:[2,4,3,5],
+                borderColor:"#fff"
+            }
+        ]
+    }
+});
+
+/* ANIMATION */
+const items=document.querySelectorAll(".hdx-card,.hdx-graph-box");
+
+window.onload=()=>{
+    items.forEach((el,i)=>{
+        setTimeout(()=>{
+            el.classList.add("hdx-show");
+        },i*120);
+    });
+};
+</script>

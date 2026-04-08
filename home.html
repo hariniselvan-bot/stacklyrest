@@ -1,0 +1,2902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Header</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #eef1e6;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: 0.3s;
+}
+
+/* SCROLL */
+.header.scrolled {
+  background: darkslategray;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* LOGO */
+.logo img {
+  height: 60px;
+  filter: brightness(0) saturate(100%) invert(74%) sepia(41%) saturate(620%) hue-rotate(6deg) brightness(95%) contrast(90%);
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 35px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #D4AF37 ;
+}
+
+/* RIGHT */
+.right {
+    color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ICON */
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.icon:hover {
+  color: #D4AF37;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #D4AF37;
+  color: #0d2b1f;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+}
+
+/* ================= MOBILE ================= */
+.mobile-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+
+  .header {
+    padding: 15px 20px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: darkslategray;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 25px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .desktop-btn {
+    display: none;
+  }
+
+  .mobile-btn {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .icon span {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="logo.webp" alt="logo">
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="navMenu">
+    <a href="home.html" class="active">𝖧𝖮𝖬𝖤 +</a>
+    <a href="about.html">𝙰𝙱𝙾𝚄𝚃 +</a>
+    <a href="service.html">𝚂𝙴𝚁𝚅𝙸𝙲𝙴 +</a>
+    <a href="page.html">𝙿𝙰𝙶𝙴𝚂 +</a>
+    <a href="blog.html">𝙱𝙻𝙾𝙶 +</a>
+
+    <!-- MOBILE BUTTON -->
+    <a href="contact.html" class="btn mobile-btn">BOOK TABLE ↗</a>
+  </nav>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <a href="#" class="icon"><i class="fa fa-search"></i><span>Search</span></a>
+
+    <a href="login.html" class="icon">
+      <i class="fa fa-user"></i>
+      <span>Login</span>
+    </a>
+
+    <!-- DESKTOP BUTTON -->
+    <a href="contact.html" class="btn desktop-btn">BOOK TABLE ↗</a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+</header>
+
+<script>
+
+// MENU
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("navMenu");
+
+hamburger.onclick = () => {
+  nav.classList.toggle("active");
+};
+
+// SCROLL
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- PREMIUM FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300&display=swap" rel="stylesheet">
+
+<title>Luxury Hero</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+}
+
+/* HERO */
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* SLIDES */
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transform:scale(1);
+    transition:opacity 1.5s ease, transform 8s ease;
+}
+
+.slide.active{
+    opacity:1;
+    transform:scale(1.15); /* smooth zoom */
+}
+
+/* DARK OVERLAY */
+.hero::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+    top:0;
+    left:0;
+}
+
+/* CONTENT CENTER */
+.content{
+    position:absolute;
+    top:52%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:#fff;
+    z-index:2;
+    width:80%;
+}
+
+/* TOP SMALL TEXT */
+.sub{
+    font-family:'Inter', sans-serif;
+    letter-spacing:6px;
+    font-size:12px;
+    color:#cfa15b;
+    margin-bottom:20px;
+    opacity:0;
+    transform:translateY(20px);
+}
+
+/* BIG TITLE */
+.title{
+    font-family:'Playfair Display', serif;
+    font-size:80px;
+    font-weight:500;
+    line-height:1.1;
+    margin-bottom:20px;
+    opacity:0;
+    transform:translateY(30px);
+}
+
+/* DESC */
+.desc{
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    color:#ddd;
+    opacity:0;
+    transform:translateY(30px);
+}
+
+/* TEXT ANIMATION */
+.content.active .sub,
+.content.active .title,
+.content.active .desc{
+    opacity:1;
+    transform:translateY(0);
+    transition:1s ease;
+}
+
+.content.active .title{ transition-delay:.3s; }
+.content.active .desc{ transition-delay:.6s; }
+
+/* LEFT SOCIAL */
+.left-social{
+    position:absolute;
+    left:30px;
+    top:50%;
+    transform:translateY(-50%);
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    color:#fff;
+    font-size:12px;
+    letter-spacing:6px;
+    z-index:3;
+}
+
+.left-social span{
+    margin:10px 0;
+}
+
+/* RIGHT BOOKING */
+.right-book{
+    position:absolute;
+    right:30px;
+    top:50%;
+    transform:translateY(-50%) rotate(180deg);
+    writing-mode:vertical-rl;
+    color:#fff;
+    font-size:12px;
+    letter-spacing:3px;
+    z-index:3;
+}
+
+/* ARROWS */
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:45px;
+    height:45px;
+    border:1px solid rgba(255,255,255,0.5);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    cursor:pointer;
+    z-index:3;
+    transition:.3s;
+}
+
+.arrow:hover{
+    background:#fff;
+    color:#000;
+}
+
+.left-arrow{ left:90px; }
+.right-arrow{ right:90px; }
+
+/* BOTTOM CURVE */
+.bottom{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:140px;
+    background:#0d2d28;
+    border-top-left-radius:50% 100%;
+    border-top-right-radius:50% 100%;
+    z-index:2;
+}
+
+/* SCROLL BUTTON */
+.scroll{
+    position:absolute;
+    bottom:60px;
+    left:50%;
+    transform:translateX(-50%);
+    width:80px;
+    height:120px;
+    border-radius:40px;
+    border:1px solid rgba(255,255,255,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    z-index:4;
+    color:#fff;
+    font-size:10px;
+}
+
+.scroll::before{
+    content:"EXPLORE MENU";
+    position:absolute;
+    top:-20px;
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+.scroll span{
+    margin-top:10px;
+    animation:down 1.5s infinite;
+}
+
+@keyframes down{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(12px);}
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <!-- SLIDES -->
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947');"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1551218808-94e220e084d2');"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');"></div>
+
+    <!-- CONTENT -->
+    <div class="content active">
+        <div class="sub">TRADATIONAL TASTE</div>
+        <div class="title">Savor Every Bite</div>
+        <div class="desc">A taste of perfection in every dish - fine dining with a modern twist.</div>
+    </div>
+
+    <!-- LEFT -->
+    <div class="left-social">
+        <span>FB</span>
+        <span>IN</span>
+        <span>YT</span>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-book">
+        Booking : +88-123-123456
+    </div>
+
+    <!-- ARROWS -->
+    <div class="arrow left-arrow">&#8592;</div>
+    <div class="arrow right-arrow">&#8594;</div>
+
+    <!-- SCROLL -->
+    <div class="scroll">
+        ↓
+    </div>
+
+    <!-- CURVE -->
+    <div class="bottom"></div>
+
+</section>
+
+<script>
+
+const slides = document.querySelectorAll('.slide');
+const content = document.querySelector('.content');
+
+const texts = [
+    {
+        sub:"TRADATIONAL TASTE",
+        title:"Savor Every Bite",
+        desc:"A taste of perfection in every dish - fine dining with a modern twist."
+    },
+    {
+        sub:"FINE DINING",
+        title:"Luxury Flavors",
+        desc:"Experience elegance and premium taste in every bite."
+    },
+    {
+        sub:"FRESH FOOD",
+        title:"Pure Delight",
+        desc:"Crafted dishes with fresh and organic ingredients."
+    }
+];
+
+let index = 0;
+
+function changeSlide(i){
+    slides.forEach(s => s.classList.remove('active'));
+    content.classList.remove('active');
+
+    slides[i].classList.add('active');
+
+    setTimeout(()=>{
+        content.querySelector('.sub').innerText = texts[i].sub;
+        content.querySelector('.title').innerText = texts[i].title;
+        content.querySelector('.desc').innerText = texts[i].desc;
+        content.classList.add('active');
+    },400);
+}
+
+/* AUTO SLIDE */
+setInterval(()=>{
+    index = (index + 1) % slides.length;
+    changeSlide(index);
+},5000);
+
+/* ARROWS */
+document.querySelector('.right-arrow').onclick = ()=>{
+    index = (index + 1) % slides.length;
+    changeSlide(index);
+};
+
+document.querySelector('.left-arrow').onclick = ()=>{
+    index = (index - 1 + slides.length) % slides.length;
+    changeSlide(index);
+};
+
+</script>
+<!-- STORY SECTION -->
+<section class="story-section">
+
+    <div class="story-top">✦ OUR STORY ✦</div>
+
+    <h1 class="story-title">
+        Enjoy Every Moment with Tasty 
+        <span class="gold">Breakfast</span>, Hearty 
+        <span class="gold">Mains</span> & 
+        <span class="gold">Drinks</span>
+    </h1>
+
+    <p class="story-desc">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since.
+    </p>
+
+    <button class="story-btn">ABOUT US</button>
+
+
+</section>
+
+<style>
+
+.story-section{
+    padding:100px 80px;
+    background:linear-gradient(135deg,#0d2d28,#0b241f);
+    color:#fff;
+    text-align:center;
+}
+
+/* TOP */
+.story-top{
+    font-size:12px;
+    letter-spacing:4px;
+    color:#d6a85c;
+    margin-bottom:20px;
+}
+
+/* TITLE */
+.story-title{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    line-height:1.3;
+    max-width:900px;
+    margin:0 auto 20px;
+}
+
+.gold{
+    color:#d6a85c;
+}
+
+/* DESC */
+.story-desc{
+    font-size:14px;
+    max-width:600px;
+    margin:0 auto 30px;
+    color:#ccc;
+}
+
+/* BUTTON */
+.story-btn{
+    padding:12px 30px;
+    border:1px solid #d6a85c;
+    background:transparent;
+    color:#d6a85c;
+    cursor:pointer;
+    margin-bottom:60px;
+    transition:.3s;
+}
+
+.story-btn:hover{
+    background:#d6a85c;
+    color:#000;
+}
+
+/* IMAGE WRAPPER */
+.story-images{
+    position:relative;
+    max-width:900px;
+    margin:0 auto;
+}
+
+/* LEFT IMAGE */
+.img-left{
+    position:absolute;
+    left:-120px;
+    top:-50px;
+}
+
+.img-left img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* RIGHT IMAGE */
+.img-right{
+    position:absolute;
+    right:-120px;
+    top:0;
+}
+
+.img-right img{
+    width:300px;
+    border-radius:40px;
+}
+
+/* BOTTOM IMAGE */
+.img-bottom img{
+    width:100%;
+    border-radius:40px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .story-section{
+        padding:60px 20px;
+    }
+
+    .story-title{
+        font-size:28px;
+    }
+
+    .img-left,
+    .img-right{
+        display:none;
+    }
+
+    .img-bottom img{
+        width:100%;
+    }
+}
+
+</style>
+<!-- PREMIUM BOOK MENU -->
+<section class="hx-book-wrap">
+
+    <!-- HEADER -->
+    <div class="hx-header">
+        ✦ EXPLORE OUR MENU ✦
+    </div>
+
+    <div class="hx-book-ui">
+
+        <!-- LEFT PAGE -->
+        <div class="hx-page hx-left">
+
+            <h2>Appetizers</h2>
+
+            <div class="hx-item">
+                <h4>STUFFED MUSHROOMS <span>$25.00</span></h4>
+                <p>Flavorful mushrooms filled with herbs and cheese.</p>
+            </div>
+
+            <div class="hx-item">
+                <h4>JALAPENO POPPERS <span>$29.00</span></h4>
+                <p>Creamy filling with crispy coating.</p>
+            </div>
+
+            <div class="hx-item">
+                <h4>CAPRESE SKEWERS <span>$45.00</span></h4>
+                <p>Tomato, mozzarella and basil.</p>
+            </div>
+
+            <div class="hx-item">
+                <h4>GREEK SALAD <span>$50.00</span></h4>
+                <p>Fresh vegetables with feta cheese.</p>
+            </div>
+
+            <div class="hx-img">
+                <img src="img1.webp">
+            </div>
+
+        </div>
+
+        <!-- CENTER LINE -->
+        <div class="hx-divider"></div>
+
+        <!-- RIGHT PAGE -->
+        <div class="hx-page hx-right">
+
+            <div class="hx-img top">
+                <img src="img2.webp">
+            </div>
+
+            <h2>Main Dishes</h2>
+
+            <div class="hx-item">
+                <h4>ROASTED SALMON <span>$35.50</span></h4>
+                <p>Fresh salmon with herbs and veggies.</p>
+            </div>
+
+            <div class="hx-item">
+                <h4>BAKED EGGPLANT <span>$40.00</span></h4>
+                <p>Rich tomato sauce with spices.</p>
+            </div>
+
+            <div class="hx-item">
+                <h4>STEAMED CRAB <span>$10.00</span></h4>
+                <p>Served with butter and herbs.</p>
+            </div>
+
+            <div class="hx-item">
+                <h4>SKIRT STEAK <span>$39.00</span></h4>
+                <p>Grilled steak with seasoning.</p>
+            </div>
+
+            <h2>Desserts</h2>
+
+            <div class="hx-item">
+                <h4>CHOCOLATE MOUSSE <span>$25.00</span></h4>
+                <p>Rich chocolate dessert.</p>
+            </div>
+
+            <div class="hx-item">
+                <h4>PAVLOVA <span>$29.00</span></h4>
+                <p>Crispy outside soft inside.</p>
+            </div>
+
+        </div>
+
+        <!-- GOLD CORNERS -->
+        <span class="hx-corner tl"></span>
+        <span class="hx-corner tr"></span>
+        <span class="hx-corner bl"></span>
+        <span class="hx-corner br"></span>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.hx-book-wrap{
+    background:#0d2d28;
+    padding:120px 60px;
+    text-align:center;
+}
+
+/* HEADER */
+.hx-header{
+    color:#d6a85c;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:40px;
+}
+
+/* BOOK */
+.hx-book-ui{
+    position:relative;
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    background:
+    linear-gradient(135deg,#123d36,#0a2622),
+    repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.02) 0px,
+        rgba(255,255,255,0.02) 2px,
+        transparent 2px,
+        transparent 6px
+    );
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 40px 80px rgba(0,0,0,0.6);
+}
+
+/* PAGE */
+.hx-page{
+    width:50%;
+    padding:60px;
+}
+
+/* DIVIDER */
+.hx-divider{
+    width:3px;
+    background:rgba(0,0,0,0.6);
+}
+
+/* TITLES */
+.hx-page h2{
+    font-family:'Playfair Display', serif;
+    font-size:34px;
+    margin:20px 0;
+}
+
+/* ITEMS */
+.hx-item{
+    margin-bottom:18px;
+}
+
+.hx-item h4{
+    font-size:16px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.hx-item span{
+    color:#d6a85c;
+}
+
+.hx-item p{
+    font-size:13px;
+    color:#ccc;
+}
+
+/* IMAGES */
+.hx-img{
+    margin-top:25px;
+}
+
+.hx-img img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:50% 50% 0 0;
+    border:2px solid #d6a85c;
+}
+
+/* GOLD CORNERS */
+.hx-corner{
+    position:absolute;
+    width:30px;
+    height:30px;
+    border:3px solid #d6a85c;
+}
+
+.tl{ top:0; left:0; border-right:none; border-bottom:none; }
+.tr{ top:0; right:0; border-left:none; border-bottom:none; }
+.bl{ bottom:0; left:0; border-right:none; border-top:none; }
+.br{ bottom:0; right:0; border-left:none; border-top:none; }
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .hx-book-ui{
+        flex-direction:column;
+    }
+
+    .hx-page{
+        width:100%;
+        padding:30px;
+    }
+
+    .hx-divider{
+        display:none;
+    }
+}
+
+</style>
+<!-- MENU SHOWCASE -->
+<section class="hx-menu">
+
+    <!-- HEADER -->
+    <div class="hx-menu-head">
+        <div class="hx-icon">✦ SPECIAL FINE DINE ✦</div>
+        <h1>Delicious Menu</h1>
+
+        <div class="hx-tabs">
+            <span class="active">STARTER</span>
+            <span>MAIN DISHES</span>
+            <span>DESSERTS</span>
+            <span>WINES</span>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="hx-menu-box">
+
+        <!-- LEFT ITEMS -->
+        <div class="hx-list">
+
+            <div class="hx-item fade">
+                <img src="img3.webp">
+                <div>
+                    <h4>STUFFED MUSHROOMS <span>$25.50</span></h4>
+                    <p>Flavorful with breadcrumbs, pine nuts and cheese.</p>
+                </div>
+            </div>
+
+            <div class="hx-item fade">
+                <img src="img1.webp">
+                <div>
+                    <h4>JALAPENO POPPERS <span>$40.00</span></h4>
+                    <p>Greek yogurt filling instead of cream cheese.</p>
+                </div>
+            </div>
+
+            <div class="hx-item fade">
+                <img src="img2.webp">
+                <div>
+                    <h4>CAPRESE SKEWERS <span>$10.00</span></h4>
+                    <p>Colorful skewers with balsamic flavor.</p>
+                </div>
+            </div>
+
+            <div class="hx-item fade">
+                <img src="img4.webp">
+                <div>
+                    <h4>GREEK SALAD <span>$10.00</span></h4>
+                    <p>Tomatoes, cucumber, olives and feta.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="hx-preview fade">
+            <img src="img5.webp">
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="hx-menu-foot fade">
+        <p>During winter daily from <span>7:00 pm</span> to <span>9:00 pm</span></p>
+        <button>VIEW ALL MENU</button>
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.hx-menu{
+    background:#0d2d28;
+    padding:100px 60px;
+    color:#fff;
+}
+
+/* HEADER */
+.hx-menu-head{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.hx-icon{
+    color:#d6a85c;
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+.hx-menu-head h1{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin:20px 0;
+}
+
+/* TABS */
+.hx-tabs{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    font-size:14px;
+}
+
+.hx-tabs span{
+    opacity:.6;
+    cursor:pointer;
+}
+
+.hx-tabs .active{
+    opacity:1;
+    border-bottom:2px solid #d6a85c;
+}
+
+/* CONTENT */
+.hx-menu-box{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    background:linear-gradient(135deg,#123d36,#0a2622);
+    padding:40px;
+    border-radius:10px;
+}
+
+/* LIST */
+.hx-list{
+    width:50%;
+}
+
+.hx-item{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.hx-item img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.hx-item h4{
+    display:flex;
+    justify-content:space-between;
+    font-size:16px;
+}
+
+.hx-item span{
+    color:#d6a85c;
+}
+
+.hx-item p{
+    font-size:13px;
+    color:#ccc;
+}
+
+/* IMAGE */
+.hx-preview{
+    width:45%;
+}
+
+.hx-preview img{
+    width:100%;
+    border-radius:50% 50% 0 0;
+    border:2px solid #d6a85c;
+}
+
+/* FOOTER */
+.hx-menu-foot{
+    text-align:center;
+    margin-top:60px;
+}
+
+.hx-menu-foot span{
+    color:#d6a85c;
+}
+
+.hx-menu-foot button{
+    margin-top:20px;
+    padding:12px 30px;
+    border:1px solid #d6a85c;
+    background:transparent;
+    color:#d6a85c;
+    cursor:pointer;
+}
+
+.hx-menu-foot button:hover{
+    background:#d6a85c;
+    color:#000;
+}
+
+/* FADE ANIMATION */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* 🔥 PREMIUM MOBILE FIX */
+@media(max-width:768px){
+
+    .hx-menu{
+        padding:60px 20px;
+    }
+
+    /* TITLE */
+    .hx-menu-head h1{
+        font-size:32px;
+        line-height:1.2;
+    }
+
+    /* TABS → SCROLL */
+    .hx-tabs{
+        overflow-x:auto;
+        gap:20px;
+        padding-bottom:10px;
+    }
+
+    .hx-tabs::-webkit-scrollbar{
+        display:none;
+    }
+
+    /* BOX */
+    .hx-menu-box{
+        flex-direction:column;
+        padding:25px;
+        border-radius:20px;
+    }
+
+    /* LIST */
+    .hx-list{
+        width:100%;
+    }
+
+    /* ITEM */
+    .hx-item{
+        gap:12px;
+        align-items:flex-start;
+    }
+
+    .hx-item img{
+        width:60px;
+        height:60px;
+    }
+
+    .hx-item h4{
+        font-size:14px;
+        flex-direction:column;
+        gap:4px;
+    }
+
+    .hx-item span{
+        font-size:13px;
+    }
+
+    .hx-item p{
+        font-size:12px;
+    }
+
+    /* RIGHT IMAGE → CENTER + SMALL */
+    .hx-preview{
+        width:100%;
+        margin-top:20px;
+        display:flex;
+        justify-content:center;
+    }
+
+    .hx-preview img{
+        width:80%;
+        border-radius:50% 50% 0 0;
+    }
+
+    /* FOOTER */
+    .hx-menu-foot{
+        margin-top:40px;
+    }
+
+    .hx-menu-foot p{
+        font-size:13px;
+    }
+
+    .hx-menu-foot button{
+        width:100%;
+        padding:14px;
+        font-size:14px;
+    }
+}
+
+</style>
+
+<script>
+
+/* FADE IN ON SCROLL */
+const fades = document.querySelectorAll('.fade');
+
+function revealFade(){
+    fades.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 80){
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealFade);
+window.addEventListener('load', revealFade);
+
+</script>
+<!-- WHY CHOOSE US -->
+<section class="hx-why">
+
+    <!-- HEADER -->
+    <div class="hx-why-head">
+        <span>✦ WHY CHOOSE US ✦</span>
+        <h1>Why Dine With Us</h1>
+    </div>
+
+    <!-- IMAGE CARDS -->
+    <div class="hx-why-cards">
+
+        <div class="hx-card fade">
+            <img src="img6.webp">
+            <div class="hx-overlay">SKILLED CHEF</div>
+        </div>
+
+        <div class="hx-card fade">
+            <img src="img7.webp">
+            <div class="hx-overlay">HYGIENIC FOOD</div>
+        </div>
+
+        <div class="hx-card fade">
+            <img src="img8.webp">
+            <div class="hx-overlay">FRESH AMBIENCE</div>
+        </div>
+
+        <div class="hx-card fade">
+            <img src="img9.webp">
+            <div class="hx-overlay">SECRET RECIPE</div>
+        </div>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="hx-stats">
+
+        <div class="hx-stat fade">
+            <h2>60+</h2>
+            <h4>MONTHLY VISITORS</h4>
+            <p>Lorem Ipsum is simply dummy text of printing.</p>
+        </div>
+
+        <div class="hx-stat fade">
+            <h2>22+</h2>
+            <h4>POSITIVE REVIEWS</h4>
+            <p>Simply dummy text of the printing industry.</p>
+        </div>
+
+        <div class="hx-stat fade">
+            <h2>135+</h2>
+            <h4>SECRET RECIPE</h4>
+            <p>Dummy text of the printing and typesetting.</p>
+        </div>
+
+        <div class="hx-stat fade">
+            <h2>10+</h2>
+            <h4>AWARD & HONORS</h4>
+            <p>Printing and typesetting industry lorem.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.hx-why{
+    background:#0d2d28;
+    padding:100px 60px;
+    color:#fff;
+    text-align:center;
+}
+
+/* HEADER */
+.hx-why-head span{
+    color:#d6a85c;
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+.hx-why-head h1{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin:20px 0 60px;
+}
+
+/* CARDS */
+.hx-why-cards{
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    margin-bottom:80px;
+}
+
+.hx-card{
+    width:23%;
+    position:relative;
+    border-radius:200px 200px 0 0;
+    overflow:hidden;
+}
+
+.hx-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.hx-card:hover img{
+    transform:scale(1.1);
+}
+
+/* OVERLAY */
+.hx-overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:15px;
+    background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+/* STATS */
+.hx-stats{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.hx-stat{
+    width:23%;
+    text-align:left;
+}
+
+.hx-stat h2{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+}
+
+.hx-stat h4{
+    color:#d6a85c;
+    margin:10px 0;
+}
+
+.hx-stat p{
+    font-size:14px;
+    color:#ccc;
+}
+
+/* FADE */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .hx-why{
+        padding:60px 20px;
+    }
+
+    .hx-why-head h1{
+        font-size:32px;
+    }
+
+    .hx-why-cards{
+        flex-direction:column;
+    }
+
+    .hx-card{
+        width:100%;
+    }
+
+    .hx-stats{
+        flex-direction:column;
+    }
+
+    .hx-stat{
+        width:100%;
+        text-align:center;
+    }
+}
+
+</style>
+
+<script>
+
+/* FADE ANIMATION */
+const fadeEls = document.querySelectorAll('.fade');
+
+function showFade(){
+    fadeEls.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 80){
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showFade);
+window.addEventListener('load', showFade);
+
+</script>
+<!-- TESTIMONIAL UNIQUE -->
+<section class="xt-testimonial-sec">
+
+    <div class="xt-testi-head">
+        <span>✦ TESTIMONIALS ✦</span>
+        <h1>What People Are Saying</h1>
+    </div>
+
+    <!-- ARROWS -->
+    <div class="xt-arrow xt-left" onclick="xtScroll(-1)">‹</div>
+    <div class="xt-arrow xt-right" onclick="xtScroll(1)">›</div>
+
+    <!-- SCROLL WRAP -->
+    <div class="xt-scroll-wrap" id="xtScrollWrap">
+
+        <!-- CARD 1 -->
+        <div class="xt-card">
+            <div class="xt-stars">★★★★★</div>
+            <p>A perfect blend of dishes, warm atmosphere and outstanding service.</p>
+            <img src="img11.webp">
+            <h4>WILLIUM JOE - <span>New York</span></h4>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="xt-card">
+            <div class="xt-stars">★★★★★</div>
+            <p>Every visit is a flavorful journey! Delicious food and elegant ambiance.</p>
+            <img src="img12.webp">
+            <h4>THERESA TIN - <span>Chicago</span></h4>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="xt-card">
+            <div class="xt-stars">★★★★★</div>
+            <p>From appetizers to desserts, every bite bursts with perfection.</p>
+            <img src="img13.webp">
+            <h4>MICHEL BYRD - <span>New York</span></h4>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="xt-card">
+            <div class="xt-stars">★★★★★</div>
+            <p>Fantastic experience! Staff was welcoming and food was top-notch.</p>
+            <img src="img14.webp">
+            <h4>ANNA SMITH - <span>London</span></h4>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="xt-card">
+            <div class="xt-stars">★★★★★</div>
+            <p>Best restaurant I’ve visited! Amazing taste and classy ambiance.</p>
+            <img src="img15.webp">
+            <h4>JOHN CARTER - <span>Toronto</span></h4>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.xt-testimonial-sec{
+    background:#0d2d28;
+    padding:120px 60px;
+    color:#fff;
+    text-align:center;
+    position:relative;
+}
+
+/* HEADER */
+.xt-testi-head span{
+    color:#d6a85c;
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+.xt-testi-head h1{
+    font-family:'Playfair Display', serif;
+    font-size:64px;
+    margin:20px 0 60px;
+}
+
+/* SCROLL WRAP */
+.xt-scroll-wrap{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding:10px;
+}
+
+.xt-scroll-wrap::-webkit-scrollbar{
+    display:none;
+}
+
+/* CARD */
+.xt-card{
+    min-width:350px;
+    border:1px solid rgba(255,255,255,0.2);
+    padding:40px;
+    transition:.4s;
+}
+
+.xt-card:hover{
+    transform:translateY(-10px);
+    border-color:#d6a85c;
+}
+
+/* STARS */
+.xt-stars{
+    color:#d6a85c;
+    margin-bottom:15px;
+}
+
+/* TEXT */
+.xt-card p{
+    font-size:15px;
+    color:#ccc;
+    line-height:1.6;
+}
+
+/* IMAGE */
+.xt-card img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    margin:20px auto;
+}
+
+/* NAME */
+.xt-card h4{
+    color:#d6a85c;
+    font-size:14px;
+}
+
+.xt-card span{
+    color:#fff;
+}
+
+/* ARROWS */
+.xt-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:50px;
+    height:50px;
+    border:1px solid #d6a85c;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.xt-left{ left:20px; }
+.xt-right{ right:20px; }
+
+.xt-arrow:hover{
+    background:#d6a85c;
+    color:#000;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .xt-testimonial-sec{
+        padding:80px 20px;
+    }
+
+    .xt-testi-head h1{
+        font-size:32px;
+    }
+
+    .xt-card{
+        min-width:280px;
+    }
+
+    .xt-arrow{
+        display:none;
+    }
+}
+
+</style>
+
+<script>
+
+/* SCROLL FUNCTION */
+function xtScroll(direction){
+    const wrap = document.getElementById("xtScrollWrap");
+    wrap.scrollBy({
+        left: direction * 380,
+        behavior: "smooth"
+    });
+}
+
+</script>
+<!-- BOOK TABLE -->
+<section class="qx-book-sec">
+
+    <!-- LEFT -->
+    <div class="qx-book-left">
+
+        <span class="qx-tag">✦ ONLINE RESERVATION ✦</span>
+        <h1>Book A Table</h1>
+        <p>Booking request <span>+88-123-123456</span> or fill out the form</p>
+
+        <form id="qxForm">
+
+            <div class="qx-row">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+            </div>
+
+            <div class="qx-row">
+                <select name="people" required>
+                    <option value="">Select Persons</option>
+                    <option>1 Person</option>
+                    <option>2 Persons</option>
+                    <option>3 Persons</option>
+                </select>
+
+                <input type="date" name="date" required>
+                <input type="time" name="time" required>
+            </div>
+
+            <textarea name="message" placeholder="Message" required></textarea>
+
+            <button type="submit">BOOK A TABLE</button>
+
+        </form>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="qx-book-right">
+        <img src="img16.webp">
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.qx-book-sec{
+    display:flex;
+    min-height:100vh;
+    border:1px solid #d6a85c;
+}
+
+/* LEFT */
+.qx-book-left{
+    width:50%;
+    padding:80px;
+    background:#0d2d28;
+    color:#fff;
+}
+
+/* TAG */
+.qx-tag{
+    color:#d6a85c;
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+/* TITLE */
+.qx-book-left h1{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin:20px 0;
+}
+
+.qx-book-left span{
+    color:#d6a85c;
+}
+
+/* ROW */
+.qx-row{
+    display:flex;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+/* INPUTS FIX (NO WHITE ISSUE) */
+.qx-book-sec input,
+.qx-book-sec select,
+.qx-book-sec textarea{
+    width:100%;
+    padding:14px;
+    background:#0d2d28 !important;
+    color:#fff !important;
+    border:1px solid rgba(255,255,255,0.2);
+    outline:none;
+}
+
+/* PLACEHOLDER */
+.qx-book-sec input::placeholder,
+.qx-book-sec textarea::placeholder{
+    color:#aaa;
+}
+
+/* SELECT STYLE */
+.qx-book-sec select{
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg fill='%23d6a85c' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 12px center;
+    background-size:18px;
+}
+
+/* OPTION */
+.qx-book-sec select option{
+    background:#0d2d28;
+    color:#fff;
+}
+
+/* DATE & TIME ICON FIX */
+.qx-book-sec input[type="date"]::-webkit-calendar-picker-indicator,
+.qx-book-sec input[type="time"]::-webkit-calendar-picker-indicator{
+    filter:invert(1);
+    cursor:pointer;
+}
+
+/* TEXTAREA */
+textarea{
+    height:120px;
+    margin-bottom:20px;
+}
+
+/* BUTTON */
+.qx-book-sec button{
+    width:100%;
+    padding:15px;
+    background:#d6a85c;
+    border:none;
+    cursor:pointer;
+}
+
+/* FOCUS */
+.qx-book-sec input:focus,
+.qx-book-sec select:focus,
+.qx-book-sec textarea:focus{
+    border-color:#d6a85c;
+    box-shadow:0 0 0 1px #d6a85c;
+}
+
+/* RIGHT */
+.qx-book-right{
+    width:50%;
+}
+
+.qx-book-right img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .qx-book-sec{ flex-direction:column; }
+    .qx-book-left,
+    .qx-book-right{ width:100%; }
+    .qx-row{ flex-direction:column; }
+    .qx-book-left{ padding:40px 20px; }
+}
+.chef-btn-x{
+    display:inline-block;
+    text-decoration:none;
+}
+</style>
+
+<script>
+
+/* HTML VALIDATION + REDIRECT */
+document.getElementById("qxForm").addEventListener("submit", function(e){
+
+    if(this.checkValidity()){
+        e.preventDefault();
+        window.location.href = "contact.html";
+    }
+
+});
+
+</script>
+<!-- CHEF SECTION -->
+<section class="chef-sec-x">
+
+    <!-- LEFT -->
+    <div class="chef-left-x reveal-x">
+        <div class="chef-tag-x">✦ MEET THE CHEF ✦</div>
+
+        <h1 class="chef-title-x">
+            Mater Chef <br> Lorenzo
+        </h1>
+
+        <p class="chef-desc-x">
+            A fine dine master chef crafts exquisite cuisine with precision,
+            passion, creativity, and elegance.
+        </p>
+
+        <a href="contact.html" class="chef-btn-x">MEET OUR TEAM</a>
+    </div>
+
+    <!-- CENTER -->
+    <div class="chef-center-x reveal-x">
+
+        <div class="chef-main-img-x">
+            <img src="img17.webp">
+        </div>
+
+        <div class="chef-badge-x">
+            <span>25+</span>
+            <p>YEARS</p>
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="chef-right-x">
+
+        <img class="chef-img-top-x float-x"
+        src="img1.webp">
+
+        <img class="chef-img-bottom-x float-x delay-x"
+        src="img2.webp">
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.chef-sec-x{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:100px 80px;
+    background:#0d2d28;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* LEFT */
+.chef-left-x{ width:30%; }
+
+.chef-tag-x{
+    color:#d6a85c;
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+.chef-title-x{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin:20px 0;
+}
+
+.chef-desc-x{
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+/* BUTTON */
+.chef-btn-x{
+    border:1px solid #d6a85c;
+    padding:12px 30px;
+    color:#d6a85c;
+    background:transparent;
+    cursor:pointer;
+    transition:.3s;
+}
+.chef-btn-x:hover{
+    background:#d6a85c;
+    color:#000;
+}
+
+/* CENTER IMAGE */
+.chef-center-x{
+    width:35%;
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.chef-main-img-x{
+    width:400px;
+    height:500px;
+    border-radius:200px;
+    overflow:hidden;
+    position:relative;
+}
+
+/* 🔥 GOLD GLOW BORDER */
+.chef-main-img-x::before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    border-radius:200px;
+    background:linear-gradient(45deg,#d6a85c,transparent,#d6a85c);
+    z-index:-1;
+    filter:blur(6px);
+    opacity:.7;
+}
+
+.chef-main-img-x img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.chef-main-img-x:hover img{
+    transform:scale(1.05);
+}
+
+/* BADGE */
+.chef-badge-x{
+    position:absolute;
+    bottom:20px;
+    left:-40px;
+    background:#d6a85c;
+    color:#000;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+/* RIGHT */
+.chef-right-x{
+    width:25%;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/* IMAGES */
+.chef-img-top-x{
+    height:120px;
+    border-radius:80px;
+    object-fit:cover;
+}
+
+.chef-img-bottom-x{
+    height:260px;
+    border-radius:150px;
+    object-fit:cover;
+}
+
+/* 🔥 FLOATING ANIMATION */
+.float-x{
+    animation:floatAnim 4s ease-in-out infinite;
+}
+
+.delay-x{
+    animation-delay:1.5s;
+}
+
+@keyframes floatAnim{
+    0%{ transform:translateY(0);}
+    50%{ transform:translateY(-15px);}
+    100%{ transform:translateY(0);}
+}
+
+/* 🔥 SCROLL REVEAL */
+.reveal-x{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s ease;
+}
+
+.reveal-x.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .chef-sec-x{
+        flex-direction:column;
+        text-align:center;
+        padding:60px 20px;
+    }
+
+    .chef-left-x,
+    .chef-center-x,
+    .chef-right-x{
+        width:100%;
+    }
+
+    .chef-title-x{ font-size:32px; }
+
+    .chef-right-x{
+        flex-direction:row;
+    }
+}
+
+</style>
+
+<script>
+
+/* SCROLL REVEAL */
+const reveals = document.querySelectorAll(".reveal-x");
+
+function revealOnScroll(){
+    reveals.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 80){
+            el.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+</script>
+<!-- SPECIAL DISHES -->
+<section class="spc-dish-sec">
+
+    <div class="spc-top">✦ POPULAR ✦</div>
+    <h1 class="spc-title">Special Dishes</h1>
+
+    <div class="spc-wrap">
+
+        <!-- LEFT CARD -->
+        <div class="spc-card spc-left">
+            <div class="spc-img">
+                <img src="img3.webp">
+            </div>
+            <span class="spc-tag">MAIN DISH</span>
+            <h3>GREEK SALAD</h3>
+            <p>Flavorful, filled with panko bread crumbs, pine nuts, parsley.</p>
+            <div class="spc-price">$39.00</div>
+        </div>
+
+        <!-- CENTER BIG -->
+        <div class="spc-card spc-center">
+            <div class="spc-img big">
+                <img src="img4.webp">
+            </div>
+            <span class="spc-tag">DESSERTS</span>
+            <h3>TOKUSEN WAGYU</h3>
+            <p>Tomatoes, cucumber, olives, avocado with crab meat.</p>
+            <div class="spc-price">$45.00</div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="spc-card spc-right">
+            <div class="spc-img">
+                <img src="img5.webp">
+            </div>
+            <span class="spc-tag">MAIN DISH</span>
+            <h3>BUTTERNUT PUMPKIN</h3>
+            <p>Avocados with crab meat, red onion, vegetables.</p>
+            <div class="spc-price">$15.00</div>
+        </div>
+
+    </div>
+
+    <!-- BUTTON -->
+    <div class="spc-btn-wrap">
+        <a href="menu.html" class="spc-btn">VIEW MENU</a>
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.spc-dish-sec{
+    padding:100px 60px;
+    background:#0d2d28;
+    text-align:center;
+    color:#fff;
+}
+
+/* TOP */
+.spc-top{
+    color:#d6a85c;
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+.spc-title{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin:20px 0 60px;
+}
+
+/* WRAP */
+.spc-wrap{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}
+
+/* CARD */
+.spc-card{
+    width:300px;
+    padding:40px 20px;
+    border:1px solid rgba(214,168,92,0.5);
+    position:relative;
+    transition:.4s;
+}
+
+/* CENTER BIG */
+.spc-center{
+    width:360px;
+    border-radius:200px;
+}
+
+/* IMAGE */
+.spc-img{
+    width:220px;
+    height:220px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    overflow:hidden;
+}
+
+.spc-img.big{
+    width:260px;
+    height:260px;
+}
+
+.spc-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+/* TEXT */
+.spc-tag{
+    color:#d6a85c;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.spc-card h3{
+    margin:10px 0;
+    font-size:20px;
+}
+
+.spc-card p{
+    color:#ccc;
+    font-size:14px;
+}
+
+.spc-price{
+    margin-top:10px;
+    color:#d6a85c;
+}
+
+/* HOVER */
+.spc-card:hover img{
+    transform:scale(1.1);
+}
+
+.spc-card:hover{
+    transform:translateY(-10px);
+}
+
+/* BUTTON */
+.spc-btn-wrap{
+    margin-top:50px;
+}
+
+.spc-btn{
+    padding:12px 30px;
+    border:1px solid #d6a85c;
+    color:#d6a85c;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.spc-btn:hover{
+    background:#d6a85c;
+    color:#000;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .spc-wrap{
+        flex-direction:column;
+    }
+
+    .spc-title{
+        font-size:32px;
+    }
+
+}
+
+</style>
+
+<script>
+
+/* SCROLL REVEAL */
+const spcCards = document.querySelectorAll(".spc-card");
+
+function showSpc(){
+    spcCards.forEach(card=>{
+        const top = card.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }
+    });
+}
+
+spcCards.forEach(c=>{
+    c.style.opacity = "0";
+    c.style.transform = "translateY(50px)";
+    c.style.transition = "1s ease";
+});
+
+window.addEventListener("scroll", showSpc);
+window.addEventListener("load", showSpc);
+
+</script>
+<section class="neo-story-sec">
+
+    <!-- BG WAVES -->
+    <div class="neo-wave-bg"></div>
+
+    <div class="neo-container">
+
+        <!-- LEFT -->
+        <div class="neo-left">
+
+            <div class="neo-top">✦ OUR STORY ✦</div>
+
+            <h1 class="neo-title">
+                Enjoy Every Moment with Tasty 
+                <span class="neo-gold">Breakfast</span>, Hearty 
+                <span class="neo-gold">Mains</span> & 
+                <span class="neo-gold">Drinks</span>
+            </h1>
+
+            <p class="neo-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since.
+            </p>
+
+            <!-- FEATURES -->
+            <div class="neo-features">
+                <div class="neo-item">
+                    🌿
+                    <div>
+                        <b>HYGIENIC FOOD</b>
+                        <p>Lorem Ipsum text</p>
+                    </div>
+                </div>
+
+                <div class="neo-item">
+                    🍽️
+                    <div>
+                        <b>FRESH AMBIENCE</b>
+                        <p>Lorem Ipsum text</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="neo-bottom">
+                <div class="neo-contact">
+                    Booking Request : <br>
+                    <span>+80 (400) 123 4567</span>
+                </div>
+
+                <button onclick="window.location.href='contact.html'" class="neo-btn">
+                    BOOK A TABLE
+                </button>
+            </div>
+
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="neo-right">
+            <img src="img16.webp">
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.neo-story-sec{
+    position:relative;
+    padding:120px 80px;
+    background:#0d2d28;
+    overflow:hidden;
+    color:#fff;
+}
+
+/* 🔥 BLUE-GOLD WAVES */
+.neo-wave-bg{
+    position:absolute;
+    inset:0;
+
+    background-image:url("data:image/svg+xml,%3Csvg width='200' height='100' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50 Q50 0 100 50 T200 50' stroke='%2368a7a3' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+
+    background-size:200px 100px;
+    background-repeat:repeat;
+
+    opacity:0.45;
+    z-index:0;
+}
+
+/* 🔥 DARK OVERLAY FOR TEXT */
+.neo-story-sec::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    z-index:1;
+}
+
+/* LAYOUT */
+.neo-container{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+/* LEFT */
+.neo-left{
+    max-width:600px;
+}
+
+.neo-top{
+    font-size:12px;
+    letter-spacing:4px;
+    color:#d6a85c;
+    margin-bottom:20px;
+}
+
+.neo-title{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.neo-gold{
+    color:#d6a85c;
+    text-shadow:0 0 10px rgba(214,168,92,0.4);
+}
+
+.neo-desc{
+    color:#ddd;
+    margin-bottom:30px;
+    line-height:1.7;
+}
+
+/* FEATURES */
+.neo-features{
+    display:flex;
+    gap:40px;
+    margin-bottom:30px;
+}
+
+.neo-item{
+    display:flex;
+    gap:10px;
+    font-size:14px;
+}
+
+/* BOTTOM */
+.neo-bottom{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+.neo-contact span{
+    color:#d6a85c;
+}
+
+/* BUTTON */
+.neo-btn{
+    padding:12px 30px;
+    border:1px solid #d6a85c;
+    background:transparent;
+    color:#d6a85c;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.neo-btn:hover{
+    background:#d6a85c;
+    color:#000;
+}
+
+/* IMAGE */
+.neo-right img{
+    width:420px;
+    height:420px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid #d6a85c;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .neo-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .neo-title{
+        font-size:28px;
+    }
+
+    .neo-features{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .neo-bottom{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .neo-right img{
+        width:260px;
+        height:260px;
+        margin-top:30px;
+    }
+}
+
+</style>
+<section class="rx-blog-sec">
+
+    <div class="rx-blog-top">✦ RECENT UPDATES ✦</div>
+    <h1 class="rx-blog-title">Latest Blog Post</h1>
+
+    <div class="rx-blog-grid">
+
+        <!-- CARD 1 -->
+        <div class="rx-blog-card">
+            <img src="img1.webp">
+
+            <div class="rx-overlay"></div>
+
+            <div class="rx-content">
+                <div class="rx-date">30 MAY | 2025</div>
+                <div class="rx-cat">Food, Flavour</div>
+                <h3>So yummy, tasty, you'll eat with your eyes.</h3>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="rx-blog-card">
+            <img src="img7.webp">
+
+            <div class="rx-overlay"></div>
+
+            <div class="rx-content">
+                <div class="rx-date">25 MAY | 2025</div>
+                <div class="rx-cat">Healthy Food</div>
+                <h3>Chef’s signature for refined tastes ever.</h3>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="rx-blog-card">
+            <img src="img4.webp">
+
+            <div class="rx-overlay"></div>
+
+            <div class="rx-content">
+                <div class="rx-date">18 MAY | 2025</div>
+                <div class="rx-cat">Recipe</div>
+                <h3>Experience gourmet art and ambience.</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BUTTON -->
+    <div class="rx-btn-wrap">
+        <button onclick="window.location.href='blog.html'" class="rx-blog-btn">
+            READ MORE BLOG
+        </button>
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.rx-blog-sec{
+    padding:120px 80px;
+    background:#0d2d28;
+    color:#fff;
+    text-align:center;
+}
+
+/* TOP */
+.rx-blog-top{
+    font-size:12px;
+    letter-spacing:4px;
+    color:#d6a85c;
+    margin-bottom:20px;
+}
+
+.rx-blog-title{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin-bottom:60px;
+}
+
+/* GRID */
+.rx-blog-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+/* CARD */
+.rx-blog-card{
+    position:relative;
+    height:500px;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+/* IMAGE */
+.rx-blog-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+/* OVERLAY */
+.rx-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.8), transparent 60%);
+}
+
+/* CONTENT */
+.rx-content{
+    position:absolute;
+    bottom:30px;
+    left:30px;
+    text-align:left;
+}
+
+.rx-date{
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.rx-cat{
+    color:#d6a85c;
+    margin-bottom:10px;
+}
+
+.rx-content h3{
+    font-family:'Playfair Display', serif;
+    font-size:26px;
+    line-height:1.3;
+}
+
+/* HOVER */
+.rx-blog-card:hover img{
+    transform:scale(1.1);
+}
+
+/* BUTTON */
+.rx-btn-wrap{
+    margin-top:60px;
+}
+
+.rx-blog-btn{
+    padding:14px 40px;
+    border:1px solid #d6a85c;
+    background:transparent;
+    color:#d6a85c;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.rx-blog-btn:hover{
+    background:#d6a85c;
+    color:#000;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .rx-blog-sec{
+        padding:60px 20px;
+    }
+
+    .rx-blog-title{
+        font-size:30px;
+    }
+
+    .rx-blog-grid{
+        grid-template-columns:1fr;
+    }
+
+    .rx-blog-card{
+        height:400px;
+    }
+
+    .rx-content h3{
+        font-size:20px;
+    }
+}
+
+</style>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-col">
+      <h1>Subscribe Newsletter</h1>
+
+      <div class="subscribe-box">
+        <input type="email" placeholder="Enter Your Email">
+        <button onclick="window.location.href='404.html'">Subscribe ↗</button>
+      </div>
+
+      <div class="social">
+        <p>Follow Us:</p>
+        <div class="icons">
+          <a href="404.html"><i class="fab fa-facebook-f"></i></a>
+          <a href="404.html"><i class="fab fa-x-twitter"></i></a>
+          <a href="404.html"><i class="fab fa-instagram"></i></a>
+          <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="home.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="service.html">service</a></li>
+        <li><a href="page.html">page</a></li>
+        <li><a href="blog.html">blog</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="404.html">Mobile Banking</a></li>
+        <li><a href="404.html">Advanced Security</a></li>
+        <li><a href="404.html">Digital Wallet</a></li>
+        <li><a href="404.html">Budgeting Tools</a></li>
+        <li><a href="404.html">Making Transactions</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h3>Get In Touch</h3>
+
+      <p><strong>📍 Location:</strong><br>18 Tanglewood Lane Gulfport</p>
+      <p><strong>✉ Email:</strong><br>hello@finto.com</p>
+      <p><strong>📞 Phone:</strong><br>+001 (808) 5550148</p>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+
+    <p>© <span>Stackly</span> Is Proudly Owned By <span>HiBootstrap</span></p>
+
+    <img src="logo.webp" alt="logo">
+
+    <div class="footer-links">
+      <a href="404.html">Privacy Policy</a>
+      <span>•</span>
+      <a href="404.html">Terms & Conditions</a>
+    </div>
+
+  </div>
+
+</footer>
+
+<style>
+
+/* FOOTER */
+.footer {
+  background: #0f3d2e;
+  color: #fff;
+  padding: 80px 90px 30px;
+}
+
+/* TOP */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* COLUMN */
+.footer-col {
+  flex: 1;
+}
+
+/* TITLE */
+.footer-col h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.footer-col h3 {
+  margin-bottom: 20px;
+}
+
+/* SUBSCRIBE */
+.subscribe-box {
+  display: flex;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.subscribe-box input {
+  flex: 1;
+  border: none;
+  padding: 15px;
+  outline: none;
+}
+
+.subscribe-box button {
+  background: #8bd400;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* SOCIAL */
+.social {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icons a {
+  text-decoration: none;
+}
+
+.icons i {
+  background: #fff;
+  color: #0f3d2e;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* LINKS */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #8bd400;
+}
+
+/* LIST */
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+/* CONTACT */
+.footer-col p {
+  margin-bottom: 15px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 20px;
+}
+
+.footer-bottom span {
+  color: #8bd400;
+}
+
+.footer-bottom img {
+  height: 40px;
+}
+
+.footer-links a {
+  margin: 0 5px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 900px) {
+
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-col h1 {
+    font-size: 26px;
+  }
+
+  .subscribe-box {
+    flex-direction: column;
+  }
+
+  .subscribe-box input,
+  .subscribe-box button {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+}
+
+</style>

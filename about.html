@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Header</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #eef1e6;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: 0.3s;
+}
+
+/* SCROLL */
+.header.scrolled {
+  background: darkslategray;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* LOGO */
+.logo img {
+  height: 60px;
+  filter: brightness(0) saturate(100%) invert(74%) sepia(41%) saturate(620%) hue-rotate(6deg) brightness(95%) contrast(90%);
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 35px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #D4AF37 ;
+}
+
+/* RIGHT */
+.right {
+    color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ICON */
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.icon:hover {
+  color: #D4AF37;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #D4AF37;
+  color: #0d2b1f;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+}
+
+/* ================= MOBILE ================= */
+.mobile-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+
+  .header {
+    padding: 15px 20px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: darkslategray;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 25px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .desktop-btn {
+    display: none;
+  }
+
+  .mobile-btn {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .icon span {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="logo.webp" alt="logo">
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="navMenu">
+    <a href="home.html">𝖧𝖮𝖬𝖤 +</a>
+    <a href="about.html" class="active">𝙰𝙱𝙾𝚄𝚃 +</a>
+    <a href="service.html">𝚂𝙴𝚁𝚅𝙸𝙲𝙴 +</a>
+    <a href="page.html">𝙿𝙰𝙶𝙴𝚂 +</a>
+    <a href="blog.html">𝙱𝙻𝙾𝙶 +</a>
+
+    <!-- MOBILE BUTTON -->
+    <a href="contact.html" class="btn mobile-btn">BOOK TABLE ↗</a>
+  </nav>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <a href="#" class="icon"><i class="fa fa-search"></i><span>Search</span></a>
+
+    <a href="login.html" class="icon">
+      <i class="fa fa-user"></i>
+      <span>Login</span>
+    </a>
+
+    <!-- DESKTOP BUTTON -->
+    <a href="contact.html" class="btn desktop-btn">BOOK TABLE ↗</a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+</header>
+
+<script>
+
+// MENU
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("navMenu");
+
+hamburger.onclick = () => {
+  nav.classList.toggle("active");
+};
+
+// SCROLL
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+</script>
+<section class="aboutHeroX">
+
+    <!-- OVERLAY -->
+    <div class="aboutOverlayX"></div>
+
+    <!-- CONTENT -->
+    <div class="aboutContentX">
+        <h1>About Us</h1>
+        <p>
+            A taste of perfection in every dish -
+            <span>fine dining with a modern twist.</span>
+        </p>
+    </div>
+
+</section>
+
+<style>
+
+/* HERO */
+.aboutHeroX{
+    position:relative;
+    height:75vh; /* ✅ 3/4 screen */
+    min-height:500px; /* prevents too small on laptops */
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+
+    background:url("abt.webp") center/cover no-repeat;
+}
+
+/* 🔥 ZOOM ONLY IMAGE (NOT TEXT) */
+.aboutHeroX::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url("your-image.webp") center/cover no-repeat;
+    z-index:0;
+
+    animation:bgZoomX 12s ease-in-out infinite alternate;
+}
+
+/* OVERLAY */
+.aboutOverlayX{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    z-index:1;
+}
+
+/* CONTENT */
+.aboutContentX{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:700px;
+    padding:20px;
+
+    animation:fadeUpHeroX 1.2s ease;
+}
+
+/* TITLE */
+.aboutContentX h1{
+    font-size:64px;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+/* TEXT */
+.aboutContentX p{
+    font-size:20px;
+    line-height:1.6;
+    color:#ddd;
+}
+
+/* GOLD TEXT */
+.aboutContentX span{
+    color:#d6a85c;
+}
+
+/* ANIMATIONS */
+@keyframes bgZoomX{
+    from{ transform:scale(1); }
+    to{ transform:scale(1.08); }
+}
+
+@keyframes fadeUpHeroX{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .aboutHeroX{
+        height:60vh;
+    }
+
+    .aboutContentX h1{
+        font-size:38px;
+    }
+
+    .aboutContentX p{
+        font-size:15px;
+    }
+}
+
+</style>
+
+
+<section class="abtStoryEliteX">
+
+    <div class="abtStoryWrapX">
+
+        <span class="abtTagX">✦ OUR STORY ✦</span>
+
+        <h1>
+            Where Exquisite Flavors Meet 
+            <span>Elegant Ambiance</span> for an 
+            <span>Unforgettable Fine Dining</span> Experience!
+        </h1>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.abtStoryEliteX{
+    width:100%;
+    padding:120px 20px;
+    background:#0d2f2b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+/* WRAPPER */
+.abtStoryWrapX{
+    max-width:1000px;
+    animation:fadeStoryX 1.2s ease forwards;
+}
+
+/* TOP TAG */
+.abtTagX{
+    display:block;
+    color:#d6a85c;
+    font-size:14px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+/* HEADING */
+.abtStoryWrapX h1{
+    font-family:'Playfair Display', serif;
+    font-size:64px;
+    font-weight:400;
+    line-height:1.3;
+    color:#eaeaea;
+}
+
+/* GOLD TEXT */
+.abtStoryWrapX h1 span{
+    color:#d6a85c;
+}
+
+/* ANIMATION */
+@keyframes fadeStoryX{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .abtStoryWrapX h1{
+        font-size:34px;
+        line-height:1.4;
+    }
+
+    .abtStoryEliteX{
+        padding:80px 15px;
+    }
+}
+
+</style>
+<section class="abtStorySplitX">
+
+    <div class="abtStoryContainerX">
+
+        <!-- LEFT -->
+        <div class="abtStoryLeftX">
+
+            <p class="abtDescX">
+                We craft unforgettable dining experiences where every detail matters. 
+                From carefully selected ingredients to elegant presentation, our goal 
+                is to bring you flavors that delight and moments you’ll cherish.
+            </p>
+
+            <div class="abtFeaturesX">
+
+                <div class="abtFeatureBoxX">
+                    <div class="abtIconX">🌿</div>
+                    <div>
+                        <h4>Hygienic Food</h4>
+                        <p>Prepared with the highest standards of cleanliness and care.</p>
+                    </div>
+                </div>
+
+                <div class="abtFeatureBoxX">
+                    <div class="abtIconX">🍽️</div>
+                    <div>
+                        <h4>Fresh Ambience</h4>
+                        <p>Relax in a warm, elegant, and welcoming dining environment.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="abtBottomX">
+                <div>
+                    <span>Booking Request :</span>
+                    <h3>+80 (400) 123 4567</h3>
+                </div>
+
+                <a href="contact.html" class="abtBtnX">BOOK A TABLE</a>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="abtStoryRightX">
+            <img src="abt1.webp." alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.abtStorySplitX{
+    background:#0d2f2b;
+    padding:140px 60px; /* increased */
+}
+
+/* CONTAINER */
+.abtStoryContainerX{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:80px; /* bigger gap */
+}
+
+/* LEFT */
+.abtStoryLeftX{
+    flex:1;
+    color:#eaeaea;
+}
+
+/* TEXT */
+.abtDescX{
+    font-size:22px; /* bigger */
+    line-height:2;
+    margin-bottom:40px;
+}
+
+/* FEATURES */
+.abtFeaturesX{
+    display:flex;
+    gap:60px;
+    margin-bottom:50px;
+}
+
+.abtFeatureBoxX{
+    display:flex;
+    gap:20px;
+}
+
+.abtFeatureBoxX h4{
+    color:#fff;
+    font-size:20px;
+    margin-bottom:6px;
+}
+
+.abtFeatureBoxX p{
+    font-size:16px;
+    color:#aaa;
+}
+
+/* ICON */
+.abtIconX{
+    font-size:34px; /* bigger */
+    color:#d6a85c;
+}
+
+/* BOTTOM */
+.abtBottomX{
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+.abtBottomX span{
+    color:#aaa;
+    font-size:16px;
+}
+
+.abtBottomX h3{
+    color:#d6a85c;
+    margin-top:5px;
+    font-size:22px;
+}
+
+/* BUTTON */
+.abtBtnX{
+    border:1px solid #d6a85c;
+    padding:16px 40px;
+    color:#d6a85c;
+    text-decoration:none;
+    font-size:16px;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+.abtBtnX:hover{
+    background:#d6a85c;
+    color:#0d2f2b;
+}
+
+/* RIGHT IMAGE */
+.abtStoryRightX{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.abtStoryRightX img{
+    width:100%;
+    max-width:650px; /* bigger */
+    border-radius:320px 320px 0 0;
+    border:2px solid rgba(214,168,92,0.6);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+    .abtStorySplitX{
+        padding:80px 20px;
+    }
+
+    .abtStoryContainerX{
+        flex-direction:column;
+        gap:40px;
+        text-align:center;
+    }
+
+    .abtFeaturesX{
+        flex-direction:column;
+        gap:25px;
+        align-items:center;
+    }
+
+    .abtBottomX{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .abtStoryRightX img{
+        max-width:320px;
+        border-radius:200px 200px 0 0;
+    }
+
+    .abtDescX{
+        font-size:17px;
+    }
+}
+
+</style>
+
+<!-- WHY CHOOSE US -->
+<section class="hx-why">
+
+    <!-- HEADER -->
+    <div class="hx-why-head">
+        <span>✦ WHY CHOOSE US ✦</span>
+        <h1>Why Dine With Us</h1>
+    </div>
+
+    <!-- IMAGE CARDS -->
+    <div class="hx-why-cards">
+
+        <div class="hx-card fade">
+            <img src="img6.webp">
+            <div class="hx-overlay">SKILLED CHEF</div>
+        </div>
+
+        <div class="hx-card fade">
+            <img src="img7.webp">
+            <div class="hx-overlay">HYGIENIC FOOD</div>
+        </div>
+
+        <div class="hx-card fade">
+            <img src="img8.webp">
+            <div class="hx-overlay">FRESH AMBIENCE</div>
+        </div>
+
+        <div class="hx-card fade">
+            <img src="img9.webp">
+            <div class="hx-overlay">SECRET RECIPE</div>
+        </div>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="hx-stats">
+
+        <div class="hx-stat fade">
+            <h2>60+</h2>
+            <h4>MONTHLY VISITORS</h4>
+            <p>Lorem Ipsum is simply dummy text of printing.</p>
+        </div>
+
+        <div class="hx-stat fade">
+            <h2>22+</h2>
+            <h4>POSITIVE REVIEWS</h4>
+            <p>Simply dummy text of the printing industry.</p>
+        </div>
+
+        <div class="hx-stat fade">
+            <h2>135+</h2>
+            <h4>SECRET RECIPE</h4>
+            <p>Dummy text of the printing and typesetting.</p>
+        </div>
+
+        <div class="hx-stat fade">
+            <h2>10+</h2>
+            <h4>AWARD & HONORS</h4>
+            <p>Printing and typesetting industry lorem.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.hx-why{
+    background:#0d2d28;
+    padding:100px 60px;
+    color:#fff;
+    text-align:center;
+}
+
+/* HEADER */
+.hx-why-head span{
+    color:#d6a85c;
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+.hx-why-head h1{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin:20px 0 60px;
+}
+
+/* CARDS */
+.hx-why-cards{
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    margin-bottom:80px;
+}
+
+.hx-card{
+    width:23%;
+    position:relative;
+    border-radius:200px 200px 0 0;
+    overflow:hidden;
+}
+
+.hx-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.hx-card:hover img{
+    transform:scale(1.1);
+}
+
+/* OVERLAY */
+.hx-overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:15px;
+    background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+/* STATS */
+.hx-stats{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.hx-stat{
+    width:23%;
+    text-align:left;
+}
+
+.hx-stat h2{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+}
+
+.hx-stat h4{
+    color:#d6a85c;
+    margin:10px 0;
+}
+
+.hx-stat p{
+    font-size:14px;
+    color:#ccc;
+}
+
+/* FADE */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .hx-why{
+        padding:60px 20px;
+    }
+
+    .hx-why-head h1{
+        font-size:32px;
+    }
+
+    .hx-why-cards{
+        flex-direction:column;
+    }
+
+    .hx-card{
+        width:100%;
+    }
+
+    .hx-stats{
+        flex-direction:column;
+    }
+
+    .hx-stat{
+        width:100%;
+        text-align:center;
+    }
+}
+
+</style>
+
+<script>
+
+/* FADE ANIMATION */
+const fadeEls = document.querySelectorAll('.fade');
+
+function showFade(){
+    fadeEls.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 80){
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showFade);
+window.addEventListener('load', showFade);
+
+</script>
+
+<!-- CHEF SECTION -->
+<section class="chef-sec-x">
+
+    <!-- LEFT -->
+    <div class="chef-left-x reveal-x">
+        <div class="chef-tag-x">✦ MEET THE CHEF ✦</div>
+
+        <h1 class="chef-title-x">
+            Mater Chef <br> Lorenzo
+        </h1>
+
+        <p class="chef-desc-x">
+            A fine dine master chef crafts exquisite cuisine with precision,
+            passion, creativity, and elegance.
+        </p>
+
+        <a href="contact.html" class="chef-btn-x">MEET OUR TEAM</a>
+    </div>
+
+    <!-- CENTER -->
+    <div class="chef-center-x reveal-x">
+
+        <div class="chef-main-img-x">
+            <img src="img17.webp">
+        </div>
+
+        <div class="chef-badge-x">
+            <span>25+</span>
+            <p>YEARS</p>
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="chef-right-x">
+
+        <img class="chef-img-top-x float-x"
+        src="img1.webp">
+
+        <img class="chef-img-bottom-x float-x delay-x"
+        src="img2.webp">
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.chef-sec-x{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:100px 80px;
+    background:#0d2d28;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* LEFT */
+.chef-left-x{ width:30%; }
+
+.chef-tag-x{
+    color:#d6a85c;
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+.chef-title-x{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin:20px 0;
+}
+
+.chef-desc-x{
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+/* BUTTON */
+.chef-btn-x{
+    border:1px solid #d6a85c;
+    padding:12px 30px;
+    color:#d6a85c;
+    background:transparent;
+    cursor:pointer;
+    transition:.3s;
+}
+.chef-btn-x:hover{
+    background:#d6a85c;
+    color:#000;
+}
+
+/* CENTER IMAGE */
+.chef-center-x{
+    width:35%;
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.chef-main-img-x{
+    width:400px;
+    height:500px;
+    border-radius:200px;
+    overflow:hidden;
+    position:relative;
+}
+
+/* 🔥 GOLD GLOW BORDER */
+.chef-main-img-x::before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    border-radius:200px;
+    background:linear-gradient(45deg,#d6a85c,transparent,#d6a85c);
+    z-index:-1;
+    filter:blur(6px);
+    opacity:.7;
+}
+
+.chef-main-img-x img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.chef-main-img-x:hover img{
+    transform:scale(1.05);
+}
+
+/* BADGE */
+.chef-badge-x{
+    position:absolute;
+    bottom:20px;
+    left:-40px;
+    background:#d6a85c;
+    color:#000;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+/* RIGHT */
+.chef-right-x{
+    width:25%;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/* IMAGES */
+.chef-img-top-x{
+    height:120px;
+    border-radius:80px;
+    object-fit:cover;
+}
+
+.chef-img-bottom-x{
+    height:260px;
+    border-radius:150px;
+    object-fit:cover;
+}
+
+/* 🔥 FLOATING ANIMATION */
+.float-x{
+    animation:floatAnim 4s ease-in-out infinite;
+}
+
+.delay-x{
+    animation-delay:1.5s;
+}
+
+@keyframes floatAnim{
+    0%{ transform:translateY(0);}
+    50%{ transform:translateY(-15px);}
+    100%{ transform:translateY(0);}
+}
+
+/* 🔥 SCROLL REVEAL */
+.reveal-x{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s ease;
+}
+
+.reveal-x.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .chef-sec-x{
+        flex-direction:column;
+        text-align:center;
+        padding:60px 20px;
+    }
+
+    .chef-left-x,
+    .chef-center-x,
+    .chef-right-x{
+        width:100%;
+    }
+
+    .chef-title-x{ font-size:32px; }
+
+    .chef-right-x{
+        flex-direction:row;
+    }
+}
+
+</style>
+
+<script>
+
+/* SCROLL REVEAL */
+const reveals = document.querySelectorAll(".reveal-x");
+
+function revealOnScroll(){
+    reveals.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 80){
+            el.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+</script>
+<section class="testiUltraX">
+
+    <!-- OVERLAY -->
+    <div class="testiOverlayUltra"></div>
+
+    <div class="testiWrapUltra">
+
+        <span class="testiTagUltra">✦ REVIEWS ✦</span>
+        <h1>Happy Testimonials</h1>
+
+        <div class="testiContentUltra">
+
+            <!-- LEFT -->
+            <div class="testiStatUltra">
+                <h2>25k+</h2>
+                <p>HAPPY<br>CUSTOMERS</p>
+            </div>
+
+            <!-- CENTER CARD -->
+            <div class="testiCardUltra">
+
+                <p id="testiTextUltra"></p>
+
+                <!-- AVATARS -->
+                <div class="testiAvatarsUltra">
+                    <img src="img11.webp" onclick="showTesti(0)">
+                    <img src="img12.webp" onclick="showTesti(1)" class="active">
+                    <img src="img13.webp" onclick="showTesti(2)">
+                </div>
+
+                <h4 id="testiNameUltra"></h4>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="testiStatUltra">
+                <h2>4.9/5</h2>
+                <p>RATED ON<br>GOOGLE</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.testiUltraX{
+    position:relative;
+    padding:140px 40px;
+    background:url("abt1.webp") center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+}
+
+/* OVERLAY */
+.testiOverlayUltra{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+}
+
+/* WRAP */
+.testiWrapUltra{
+    position:relative;
+    z-index:2;
+}
+
+/* TITLE */
+.testiWrapUltra h1{
+    font-size:60px;
+    margin:20px 0 60px;
+}
+
+/* TAG */
+.testiTagUltra{
+    color:#d6a85c;
+    letter-spacing:3px;
+}
+
+/* CONTENT */
+.testiContentUltra{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+}
+
+/* STATS */
+.testiStatUltra h2{
+    font-size:50px;
+}
+.testiStatUltra p{
+    font-size:13px;
+    color:#ccc;
+}
+
+/* CARD */
+.testiCardUltra{
+    max-width:550px;
+    padding:50px 40px;
+    border-radius:200px;
+    position:relative;
+
+    background:rgba(13,47,43,0.7);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(214,168,92,0.5);
+
+    animation:glowBorder 3s infinite alternate;
+}
+
+/* 🔥 GLOW BORDER */
+@keyframes glowBorder{
+    from{
+        box-shadow:0 0 10px rgba(214,168,92,0.2);
+    }
+    to{
+        box-shadow:0 0 40px rgba(214,168,92,0.8);
+    }
+}
+
+/* TEXT */
+.testiCardUltra p{
+    font-size:18px;
+    line-height:1.8;
+    opacity:0;
+    transition:0.5s;
+}
+
+/* AVATARS */
+.testiAvatarsUltra{
+    margin:30px 0 10px;
+}
+
+.testiAvatarsUltra img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:2px solid #d6a85c;
+    margin:0 -10px;
+    cursor:pointer;
+    opacity:0.5;
+    transition:0.3s;
+}
+
+.testiAvatarsUltra img.active{
+    transform:scale(1.2);
+    opacity:1;
+}
+
+/* NAME */
+.testiCardUltra h4{
+    margin-top:10px;
+    letter-spacing:2px;
+    color:#d6a85c;
+    opacity:0;
+    transition:0.5s;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .testiContentUltra{
+        flex-direction:column;
+    }
+    .testiWrapUltra h1{
+        font-size:36px;
+    }
+    .testiCardUltra{
+        border-radius:40px;
+        padding:30px 20px;
+    }
+}
+
+</style>
+
+<script>
+
+/* DATA */
+const testimonials = [
+{
+    text: "Such a memorable meal! The food was divine, beautifully plated and the atmosphere was perfect. A must visit place!",
+    name: "EMMA WILSON"
+},
+{
+    text: "Absolutely loved the experience! The staff were welcoming and every dish was crafted to perfection.",
+    name: "SAM JHONSON"
+},
+{
+    text: "A perfect place for fine dining. The flavors were incredible and the ambiance was truly elegant.",
+    name: "OLIVIA MARTIN"
+}
+];
+
+let index = 1;
+
+/* SHOW FUNCTION */
+function showTesti(i){
+    index = i;
+
+    const text = document.getElementById("testiTextUltra");
+    const name = document.getElementById("testiNameUltra");
+
+    text.style.opacity = 0;
+    name.style.opacity = 0;
+
+    setTimeout(()=>{
+        text.innerText = testimonials[i].text;
+        name.innerText = testimonials[i].name;
+
+        text.style.opacity = 1;
+        name.style.opacity = 1;
+    },200);
+
+    document.querySelectorAll(".testiAvatarsUltra img").forEach(img=>{
+        img.classList.remove("active");
+    });
+
+    document.querySelectorAll(".testiAvatarsUltra img")[i].classList.add("active");
+}
+
+/* AUTO SLIDE */
+setInterval(()=>{
+    index = (index + 1) % testimonials.length;
+    showTesti(index);
+},4000);
+
+/* INIT */
+showTesti(index);
+
+</script>
+<section class="srvUltraWrapX">
+
+    <!-- TITLE -->
+    <div class="srvHeadX">
+        <span>✦ OUR SERVICES ✦</span>
+        <h1>Perfect Spaces for<br>Every Occasion</h1>
+    </div>
+
+    <div class="srvContainerX">
+
+        <!-- LEFT -->
+        <div class="srvSideX srvLeftX">
+
+            <div class="srvItemX">
+                <div class="srvIconX">🥂</div>
+                <h3>Party & Celebrations</h3>
+                <p>Celebrate your special moments with vibrant ambiance, curated menus, and unforgettable experiences crafted just for you.</p>
+            </div>
+
+            <div class="srvItemX">
+                <div class="srvIconX">🍽️</div>
+                <h3>Luxury Fine Dining</h3>
+                <p>Experience gourmet cuisine with elegant presentation, refined flavors, and world-class service in a luxurious setting.</p>
+            </div>
+
+        </div>
+
+        <!-- CENTER IMAGE -->
+        <div class="srvCenterX">
+            <div class="srvImgWrapX">
+                <img src="abt2.webp" alt="">
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="srvSideX srvRightX">
+
+            <div class="srvItemX">
+                <div class="srvIconX">🏛️</div>
+                <h3>Banquet Hall</h3>
+                <p>Host grand events in our beautifully designed banquet halls with premium interiors and seamless service.</p>
+            </div>
+
+            <div class="srvItemX">
+                <div class="srvIconX">🚚</div>
+                <h3>Outdoor Catering</h3>
+                <p>Enjoy restaurant-quality food anywhere with our professional outdoor catering services tailored to your needs.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.srvUltraWrapX{
+    padding:140px 60px;
+    background:#0b2e2a;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* TITLE */
+.srvHeadX{
+    text-align:center;
+    margin-bottom:80px;
+}
+.srvHeadX span{
+    color:#d6a85c;
+    letter-spacing:3px;
+}
+.srvHeadX h1{
+    font-size:60px;
+    margin-top:20px;
+}
+
+/* CONTAINER */
+.srvContainerX{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+/* SIDES */
+.srvSideX{
+    width:30%;
+}
+
+/* ITEMS */
+.srvItemX{
+    margin-bottom:60px;
+    opacity:0;
+    transform:translateX(-80px);
+    transition:1s ease;
+}
+
+/* RIGHT SIDE ANIMATION */
+.srvRightX .srvItemX{
+    transform:translateX(80px);
+}
+
+/* ICON */
+.srvIconX{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+/* TEXT */
+.srvItemX h3{
+    margin-bottom:10px;
+    color:#fff;
+}
+.srvItemX p{
+    color:#bbb;
+    line-height:1.6;
+}
+
+/* CENTER IMAGE */
+.srvCenterX{
+    width:40%;
+    display:flex;
+    justify-content:center;
+}
+
+.srvImgWrapX{
+    width:100%;
+    max-width:420px;
+    border-radius:50% 50% 0 0;
+    overflow:hidden;
+    position:relative;
+}
+
+/* GOLD BORDER */
+.srvImgWrapX::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:2px solid #d6a85c;
+    border-radius:50% 50% 0 0;
+    pointer-events:none;
+}
+
+/* IMAGE */
+.srvImgWrapX img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* 🔥 SCROLL ACTIVE */
+.srvItemX.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .srvUltraWrapX{
+        padding:100px 20px;
+    }
+
+    .srvHeadX h1{
+        font-size:36px;
+    }
+
+    .srvContainerX{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    .srvSideX{
+        width:100%;
+        text-align:center;
+    }
+
+    .srvItemX{
+        transform:translateY(40px);
+    }
+
+    .srvRightX .srvItemX{
+        transform:translateY(40px);
+    }
+
+    .srvItemX.active{
+        transform:translateY(0);
+    }
+
+    .srvCenterX{
+        width:100%;
+    }
+
+    .srvImgWrapX{
+        max-width:280px;
+    }
+
+}
+
+</style>
+
+<script>
+
+/* SCROLL ANIMATION */
+const srvItems = document.querySelectorAll(".srvItemX");
+
+window.addEventListener("scroll", () => {
+
+    srvItems.forEach(el => {
+        const pos = el.getBoundingClientRect().top;
+
+        if(pos < window.innerHeight - 100){
+            el.classList.add("active");
+        }
+    });
+
+});
+
+</script>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-col">
+      <h1>Subscribe Newsletter</h1>
+
+      <div class="subscribe-box">
+        <input type="email" placeholder="Enter Your Email">
+        <button onclick="window.location.href='404.html'">Subscribe ↗</button>
+      </div>
+
+      <div class="social">
+        <p>Follow Us:</p>
+        <div class="icons">
+          <a href="404.html"><i class="fab fa-facebook-f"></i></a>
+          <a href="404.html"><i class="fab fa-x-twitter"></i></a>
+          <a href="404.html"><i class="fab fa-instagram"></i></a>
+          <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="home.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="service.html">service</a></li>
+        <li><a href="page.html">page</a></li>
+        <li><a href="blog.html">blog</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="404.html">Mobile Banking</a></li>
+        <li><a href="404.html">Advanced Security</a></li>
+        <li><a href="404.html">Digital Wallet</a></li>
+        <li><a href="404.html">Budgeting Tools</a></li>
+        <li><a href="404.html">Making Transactions</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h3>Get In Touch</h3>
+
+      <p><strong>📍 Location:</strong><br>18 Tanglewood Lane Gulfport</p>
+      <p><strong>✉ Email:</strong><br>hello@finto.com</p>
+      <p><strong>📞 Phone:</strong><br>+001 (808) 5550148</p>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+
+    <p>© <span>Stackly</span> Is Proudly Owned By <span>HiBootstrap</span></p>
+
+    <img src="logo.webp" alt="logo">
+
+    <div class="footer-links">
+      <a href="404.html">Privacy Policy</a>
+      <span>•</span>
+      <a href="404.html">Terms & Conditions</a>
+    </div>
+
+  </div>
+
+</footer>
+
+<style>
+
+/* FOOTER */
+.footer {
+  background: #0f3d2e;
+  color: #fff;
+  padding: 80px 90px 30px;
+}
+
+/* TOP */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* COLUMN */
+.footer-col {
+  flex: 1;
+}
+
+/* TITLE */
+.footer-col h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.footer-col h3 {
+  margin-bottom: 20px;
+}
+
+/* SUBSCRIBE */
+.subscribe-box {
+  display: flex;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.subscribe-box input {
+  flex: 1;
+  border: none;
+  padding: 15px;
+  outline: none;
+}
+
+.subscribe-box button {
+  background: #8bd400;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* SOCIAL */
+.social {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icons a {
+  text-decoration: none;
+}
+
+.icons i {
+  background: #fff;
+  color: #0f3d2e;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* LINKS */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #8bd400;
+}
+
+/* LIST */
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+/* CONTACT */
+.footer-col p {
+  margin-bottom: 15px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 20px;
+}
+
+.footer-bottom span {
+  color: #8bd400;
+}
+
+.footer-bottom img {
+  height: 40px;
+}
+
+.footer-links a {
+  margin: 0 5px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 900px) {
+
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-col h1 {
+    font-size: 26px;
+  }
+
+  .subscribe-box {
+    flex-direction: column;
+  }
+
+  .subscribe-box input,
+  .subscribe-box button {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+}
+
+</style>
